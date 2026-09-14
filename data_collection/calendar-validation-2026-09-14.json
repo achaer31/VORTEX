@@ -1,0 +1,61 @@
+{
+  "schema": "vortex.calendar.limited-validation.v1",
+  "review_date": "2026-09-14",
+  "status": "REJECTED",
+  "test_class": "actual_terminal_capture_and_offline_guard_check",
+  "source_sha256": {
+    "VortexCalendarSnapshot.mq5": "38ed6f6d6f45381cc2b2e3919ea537f2ac527becd39b04001bb30bd918e48589",
+    "ingest.py": "482f2745970af3622d68e2a43d6a738cf0239af1aab949d70110fa0d203ece2e"
+  },
+  "private_artifact_sha256": {
+    "manifest.csv": "3860e415506b7bcce01eae2eb63c5384a14adc7433b8558008db9d2689c02fcc",
+    "events.csv": "71eb3927ed0ff346f09591cca6012c7bf3481196432b332b8f59dc65885d0787",
+    "calendar-compile.log": "7c2a5a261d61dc635e61400cee3fd118c75054673a7a22e37a6147d90ea53774"
+  },
+  "compilation": {
+    "errors": 0,
+    "warnings": 0,
+    "elapsed_ms": 1396,
+    "target": "X64 Regular",
+    "log_inspected_independently": true,
+    "deployed_source_match_basis": "parent_operator_verified_exact_source"
+  },
+  "capture": {
+    "reported_started_at_utc": "2026-09-14T07:58:37Z",
+    "reported_received_at_utc": "2026-09-14T07:58:39Z",
+    "reported_query_start_utc": "2026-09-14T06:58:37Z",
+    "reported_query_end_utc": "2026-09-15T07:58:37Z",
+    "timestamp_basis": "host_UTC_labels_not_independently_verified",
+    "server_utc_offset_minutes_input": 0,
+    "host_utc_clock_verified": false,
+    "currency_filter": "USD",
+    "records": 2,
+    "importance_counts": {"low": 2, "moderate": 0, "high": 0, "none": 0},
+    "terminal_connected_reported": true,
+    "query_error": 0,
+    "metadata_errors": 0,
+    "ambiguous_high_times": 0,
+    "coverage_attested": false,
+    "manifest_run_status": "captured_needs_review",
+    "algorithmic_trading_enabled_operator_observation": false
+  },
+  "independent_offline_validation": {
+    "raw_files_preserved": true,
+    "direct_adapter_status": "REJECTED",
+    "direct_adapter_reason": "host UTC clock not verified",
+    "cli_exit_code": 2,
+    "cli_status": "REJECTED",
+    "normalized_files_created": 0
+  },
+  "limitations": [
+    "One successful USD query establishes limited terminal/API operation only.",
+    "No high-impact records were returned in this sample; high-impact coverage is not proven.",
+    "Host UTC accuracy, feed freshness and query completeness remain unverified.",
+    "Hashes establish byte consistency, not independent authenticity of source or capture claims.",
+    "This capture provides no historical known-at or unseen-data coverage proof."
+  ],
+  "news_coverage_approved": false,
+  "historical_coverage_proven": false,
+  "strategy_approval": false,
+  "go_status": "NO_GO"
+}

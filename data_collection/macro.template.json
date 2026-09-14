@@ -1,0 +1,29 @@
+{
+  "schema": "vortex.macro.capture.v1",
+  "status": "NOT_CONFIGURED",
+  "origin": "actual_live_capture",
+  "host_utc_clock_verified": false,
+  "sources": {
+    "dxy": {
+      "instrument": "ICE_DXY_SPOT",
+      "normalized_unit": "index_points",
+      "provider": "",
+      "feed_symbol": "",
+      "unit_conversion": "",
+      "documentation_url": "",
+      "reviewed": false,
+      "entitlement_confirmed": false
+    },
+    "us10y_yield": {
+      "instrument": "US_TREASURY_10Y_YIELD",
+      "normalized_unit": "percent_per_annum",
+      "provider": "",
+      "feed_symbol": "",
+      "unit_conversion": "",
+      "documentation_url": "",
+      "reviewed": false,
+      "entitlement_confirmed": false
+    }
+  },
+  "samples": []
+}

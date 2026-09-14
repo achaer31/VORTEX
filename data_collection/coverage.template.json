@@ -1,0 +1,12 @@
+{
+  "schema": "vortex.calendar.coverage-review.v1",
+  "status": "NOT_REVIEWED",
+  "source": "MT5_ECONOMIC_CALENDAR_USD",
+  "scope": "ALL_USD_HIGH_IMPACT_SCHEDULED_EVENTS",
+  "snapshot_sha256": {"manifest.csv": null, "events.csv": null},
+  "reviewed_at": null,
+  "clock_and_offset_verified": false,
+  "feed_current_verified": false,
+  "query_scope_complete_verified": false,
+  "evidence_note": ""
+}
