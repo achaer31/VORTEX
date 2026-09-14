@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f3ec">
+  <meta name="description" content="VORTEX XAU — konsol penelitian XAU/USD. Jelajahi candle historis, enam modul sinyal, dan hasil 32 skenario simulasi yang dapat diaudit.">
+  <title>VORTEX / XAU — Research Console</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konsol</a>
+  <header class="masthead">
+    <a class="brand" href="./" aria-label="Vortex beranda"><svg viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="20" rx="16" ry="7" transform="rotate(-35 20 20)"/><ellipse cx="20" cy="20" rx="16" ry="7" transform="rotate(35 20 20)"/><circle cx="20" cy="20" r="3"/></svg><strong>VORTEX<span>/ XAU</span></strong></a>
+    <nav aria-label="Navigasi utama"><a href="#console" class="active">Konsol</a><a href="#modules">Modul</a><a href="#scenarios">Skenario</a></nav>
+    <a class="source-link" href="https://github.com/achaer31/VORTEX" target="_blank" rel="noopener noreferrer">Source di GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main">
+    <noscript><p class="loading">Aktifkan JavaScript untuk membuka konsol interaktif, atau <a href="https://github.com/achaer31/VORTEX/blob/main/reports/v0.1/REPORT.md">baca laporan penelitian di GitHub</a>.</p></noscript>
+    <div id="load-state" class="loading" role="status">Memuat snapshot penelitian…</div>
+    <div id="app" hidden>
+      <section class="heading" id="console">
+        <div><div class="eyebrow">EXPERIMENT 001 <span class="slash">/</span> V0.1</div><h1>Observatorium <span>XAU/USD.</span></h1><p>Enam perspektif. Satu keputusan yang bisa diperiksa.</p></div>
+        <div class="snapshot-stamp"><span class="badge">SNAPSHOT HISTORIS</span><time id="snapshot-time"></time><small>Clock broker · offset UTC belum diverifikasi</small></div>
+      </section>
+      <section class="control-bar" aria-label="Pilih skenario simulasi">
+        <div class="control-title"><span class="crosshair-mark" aria-hidden="true">⌖</span><span>Eksperimen tersimpan<small>32 skenario · parameter tetap</small></span></div>
+        <label>PERIODE<select id="period-select"><option value="full">Seluruh periode</option><option value="development">Development</option><option value="validation">Validation</option><option value="holdout">Holdout</option></select></label>
+        <label>RISIKO / ENTRY<select id="risk-select"><option value="0.03">3%</option><option value="0.05">5%</option><option value="0.075">7,5%</option><option value="0.1">10%</option></select></label>
+        <label>ASUMSI BIAYA<select id="cost-select"><option value="baseline">Baseline</option><option value="stress">Stress</option></select></label>
+        <button class="icon-button" id="info-button" aria-label="Tentang data dan asumsi">i</button>
+      </section>
+      <section class="metrics" aria-label="Ringkasan skenario terpilih" aria-live="polite">
+        <article><div class="metric-label">EQUITY SIMULASI <span>01</span></div><strong id="metric-equity">—</strong><small>Awal <span id="metric-start">—</span><span class="metric-note">USD virtual</span></small></article>
+        <article><div class="metric-label">P/L BERSIH <span>02</span></div><strong id="metric-pnl">—</strong><small id="metric-pnl-note">—</small></article>
+        <article><div class="metric-label">TRANSAKSI SIMULASI <span>03</span></div><strong id="metric-trades">—</strong><small><span id="metric-rejected">—</span> kandidat ditolak minimum lot</small></article>
+        <article><div class="metric-label">BAR DALAM PERIODE <span>04</span></div><strong id="metric-bars">—</strong><small id="metric-range">—</small></article>
+      </section>
+      <div class="result-strip"><span class="square-tag">WAIT</span><p id="result-message"></p><button class="text-button" id="diagnosis-button">Mengapa tidak ada entry? <span aria-hidden="true">↗</span></button></div>
+      <div class="primary-grid">
+        <section class="panel vortex-panel">
+          <header class="panel-header"><h2><span>01</span> THE VORTEX</h2><span class="panel-tag">SIGNAL FIELD</span></header>
+          <div class="vortex-field">
+            <div class="field-topline"><span>SNAPSHOT SINYAL TERAKHIR</span><span id="signal-direction">—</span></div>
+            <svg id="vortex-svg" viewBox="0 0 520 365" aria-label="Ilustrasi geometris pusaran, bukan visualisasi data pasar" role="img"></svg>
+            <div class="field-stat left"><small>CONSENSUS</small><strong id="consensus-value">—</strong><span>skala −100 / +100</span></div>
+            <div class="field-stat right"><small>ATR · M5</small><strong id="atr-value">—</strong><span>satuan harga USD</span></div>
+            <div class="field-bottomline"><span>ILUSTRASI GEOMETRI</span><span>BUKAN DATA PASAR</span></div>
+          </div>
+          <div class="consensus-scale"><div class="scale-labels"><span>SHORT ≤ −75</span><span>WAIT</span><span>LONG ≥ +75</span></div><div class="scale-track"><i class="threshold left"></i><i class="threshold right"></i><b id="consensus-marker"></b></div><p id="consensus-caption"></p></div>
+        </section>
+        <section class="panel candle-panel">
+          <header class="panel-header"><h2><span>02</span> XAU / USD</h2><div class="segmented" id="timeframe-controls" role="group" aria-label="Timeframe candle"><button data-timeframe="M5" class="selected" aria-pressed="true">M5</button><button data-timeframe="M15" aria-pressed="false">M15</button><button data-timeframe="H1" aria-pressed="false">H1</button></div></header>
+          <div class="price-header"><div><strong id="last-price">—</strong><span id="price-change">—</span></div><div class="chart-meta"><span>CANDLE HISTORIS · BID</span><button id="range-button" class="subtle-button" aria-label="Ubah jumlah bar ditampilkan">100 BAR</button></div></div>
+          <div class="ohlc-bar" id="ohlc-bar" aria-live="polite"></div>
+          <div class="chart-wrap" id="chart-wrap" tabindex="0" role="img" aria-label="Grafik candle historis. Gunakan panah kiri dan kanan untuk memeriksa bar."><svg id="candle-svg" viewBox="0 0 760 320"></svg><div class="chart-empty" id="chart-empty" hidden>Data candle tidak tersedia.</div></div>
+          <div class="chart-footer"><span id="chart-period">—</span><span><i class="legend-tick"></i> Tick volume <span class="muted">/ aktivitas quote</span></span></div>
+        </section>
+      </div>
+      <div class="secondary-grid">
+        <section class="panel equity-panel"><header class="panel-header"><h2><span>03</span> EQUITY TRACE</h2><span class="panel-tag">SIMULASI</span></header><div class="mini-heading"><strong id="equity-trace-value">—</strong><span id="equity-trace-change">—</span></div><svg id="equity-svg" viewBox="0 0 450 120" role="img" aria-label="Equity simulasi skenario terpilih"></svg><p class="panel-footnote">Equity datar karena tidak ada transaksi. Bukan bukti perlindungan modal.</p></section>
+        <section class="panel risk-panel"><header class="panel-header"><h2><span>04</span> RISK GATE</h2><span class="panel-tag gold">MINIMUM LOT</span></header><div class="risk-compare"><div><small>BUDGET ENTRY</small><strong id="risk-budget">—</strong></div><span class="less-than" aria-hidden="true">&lt;</span><div><small>KEBUTUHAN TERENDAH*</small><strong id="risk-needed">—</strong></div></div><div class="risk-track"><div id="risk-track-fill"></div><i></i></div><div class="risk-track-labels"><span>0</span><span>0,01 lot</span></div><p class="panel-footnote">*Di seluruh periode. Stop + asumsi slippage, setelah pembulatan tick.</p></section>
+        <section class="panel journal-panel"><header class="panel-header"><h2><span>05</span> EVENT JOURNAL</h2><span class="panel-tag" id="journal-count">—</span></header><div id="journal-list"></div><p class="panel-footnote">Sampel event penelitian · tidak ada order broker.</p></section>
+      </div>
+      <section id="modules" class="modules-section"><div class="section-heading"><div><div class="eyebrow">THE SIX / SIGNAL LEDGER</div><h2>Satu pasar, enam modul.</h2></div><p id="module-time">—</p></div><div class="modules-grid" id="module-grid"></div><div class="module-note">Skor indikator bukan probabilitas menang. Klik modul untuk melihat aturan dan bobotnya.</div></section>
+      <section id="scenarios" class="panel scenarios-panel"><header class="panel-header"><h2><span>06</span> REGISTER EKSPERIMEN</h2><button id="table-toggle" class="subtle-button" aria-expanded="false" aria-controls="scenario-table-wrap">LIHAT 32 SKENARIO <span aria-hidden="true">↓</span></button></header><div class="scenario-summary"><span><b>32 / 32</b> skenario selesai</span><span>4 risiko <i>×</i> 2 biaya <i>×</i> 4 periode</span><a href="https://github.com/achaer31/VORTEX/blob/main/reports/v0.1/REPORT.md" target="_blank" rel="noopener noreferrer">Baca laporan penuh ↗</a></div><div id="scenario-table-wrap" class="table-wrap" hidden><table><caption>Hasil tersimpan. Pilih baris untuk membuka skenario pada konsol.</caption><thead><tr><th>Periode</th><th>Risiko</th><th>Biaya</th><th>Equity akhir</th><th>P/L</th><th>Trade</th><th>Ditolak min. lot</th><th></th></tr></thead><tbody id="scenario-rows"></tbody></table></div></section>
+      <footer><div><strong>VORTEX <span>/ XAU</span></strong><p>Catatan yang jujur, sebelum keputusan berikutnya.</p></div><div class="footer-links"><a href="https://github.com/achaer31/VORTEX" target="_blank" rel="noopener noreferrer">Source ↗</a><a href="https://github.com/achaer31/VORTEX/commits" target="_blank" rel="noopener noreferrer">Riwayat versi ↗</a><button id="footer-info" class="text-button">Tentang snapshot</button></div><p class="footer-note">Riset offline · tanpa feed live · tidak mengirim transaksi.<br>History dan realisme eksekusi belum tersertifikasi.</p></footer>
+    </div>
+  </main>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="eyebrow" id="dialog-eyebrow">CATATAN PENELITIAN</span><button class="icon-button" id="dialog-close" aria-label="Tutup detail">×</button></div><h2 id="dialog-title"></h2><div id="dialog-content"></div></dialog>
+  <script src="app.js" defer></script>
+</body>
+</html>
