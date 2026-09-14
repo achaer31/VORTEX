@@ -1,0 +1,111 @@
+{
+  "schema": "vortex.native.context-probe-validation.v1",
+  "validation_date": "2026-09-14",
+  "status": "DISCOVERY_VALIDATED_CONTEXT_STILL_BLOCKED",
+  "scope": "Independent consistency review of copied actual one-shot MT5 context-discovery output; not an approved data adapter.",
+  "source_sha256": {
+    "native_mt5/VortexContextProbe.mq5": "8f885cd59e4e36ca7c95d3bb63af1000139ed27e18dc1cc099a3d0512a25e411"
+  },
+  "private_capture_sha256": {
+    "manifest.csv": "c14336d448f79489b2e3d92c79e55455fbd2b226ae7fe8d0eba4903587dff3fb",
+    "candidates.csv": "36f55572e2b426f87f11b22dbb8f4f5f9d7bf22704e94568386b6077bfe88c6f"
+  },
+  "capture": {
+    "manifest_status": "DISCOVERY_COMPLETED",
+    "manifest_complete": true,
+    "identity_valid_at_manifest_end_reported": true,
+    "host_started_label": "2026-09-14T09:59:57",
+    "host_received_label": "2026-09-14T09:59:57",
+    "elapsed_monotonic_ms_reported": 0,
+    "server_time_label": "2026-09-14T09:59:57",
+    "paired_host_time_label": "2026-09-14T09:59:57",
+    "server_minus_host_label_seconds": 0,
+    "clock_accuracy": "UNVERIFIED",
+    "utc0_clock_consistency": "CONSISTENT_UNVERIFIED",
+    "server_utc_offset": "UNKNOWN_NOT_INFERRED_FROM_CLOCK_DIFFERENCE"
+  },
+  "catalog": {
+    "reported_total": 357,
+    "reported_names_examined": 357,
+    "reported_scan_completed": true,
+    "reported_property_errors": 0,
+    "candidate_symbols": 2,
+    "candidate_property_rows_checked": 24,
+    "candidate_properties_per_symbol": 12,
+    "all_rows_reported_unreviewed": true,
+    "ten_year_keyword_candidate_count": 0,
+    "full_catalog_names_persisted": false,
+    "candidates": [
+      {
+        "symbol": "DXY",
+        "description": "US Dollar Index",
+        "trade_calc_mode_raw": 4,
+        "trade_calc_mode_documented_name": "SYMBOL_CALC_MODE_CFDLEVERAGE",
+        "interpretation": "Leveraged CFD calculation mode only; underlying spot-index mapping, entitlement, values and freshness remain unverified.",
+        "selected_at_capture": false,
+        "custom_at_capture": false,
+        "approved_ice_dxy_spot_input": false
+      },
+      {
+        "symbol": "USDXOF",
+        "description": "US Dollar vs West African CFA",
+        "currency_profit": "XOF",
+        "classification": "KEYWORD_FALSE_POSITIVE",
+        "interpretation": "Currency pair matched the USDX substring; excluded as a dollar-index input."
+      }
+    ]
+  },
+  "calendar": {
+    "currency_filter": "USD",
+    "query_time_basis": "trade_server_unverified_UTC_offset",
+    "query_start_server": "2026-09-14T08:59:57",
+    "query_end_server": "2026-09-15T09:59:57",
+    "api_returned": 2,
+    "api_error": 0,
+    "value_records": 2,
+    "metadata_examined": 2,
+    "metadata_errors": 0,
+    "high_importance_values": 0,
+    "moderate_importance_values": 0,
+    "low_importance_values": 2,
+    "none_importance_values": 0,
+    "unknown_importance_values": 0,
+    "ambiguous_high_times": 0,
+    "out_of_window_values": 0,
+    "query_consistent": true,
+    "coverage_attested": false
+  },
+  "checks": {
+    "unique_manifest_keys": true,
+    "exact_candidate_schema": true,
+    "complete_candidate_field_sets": true,
+    "candidate_sequence_contiguous": true,
+    "candidate_receipts_nondecreasing": true,
+    "counts_match_persisted_candidate_rows": true,
+    "catalog_manifest_counts_consistent": true,
+    "full_catalog_independently_replayed": false,
+    "all_exported_approval_flags_false": true,
+    "raw_files_preserved": true,
+    "source_hash_unchanged": true
+  },
+  "official_reference": {
+    "url": "https://www.mql5.com/en/book/automation/symbols/symbols_margin",
+    "verified_fact": "The documented enum legend maps numeric4 to SYMBOL_CALC_MODE_CFDLEVERAGE; this identifies a calculation mode, not spot-index feed provenance."
+  },
+  "news_valid": false,
+  "macro_valid": false,
+  "normalized_adapter_inputs_created": false,
+  "historical_available_at_proven": false,
+  "strategy_go": false,
+  "autonomous_ready": false,
+  "execution_enabled": false,
+  "limitations": [
+    "This audits supplied CSV contents and current source hashes. Actual source transfer, compilation and observed terminal run are separate evidence; hashes are not signed runtime attestation.",
+    "Zero elapsed milliseconds is a reported sample at counter resolution, not zero network latency or a feed freshness guarantee.",
+    "357 catalog entries are reported by the manifest; only keyword-matched property rows were persisted. No ten-year match does not establish universal feed absence or exhaust differently named/inaccessible products.",
+    "DXY metadata does not establish an entitled ICE spot feed, quote availability, units, update cadence, observation timestamps or usable historical availability.",
+    "USDXOF is a reviewed false positive and must never substitute for DXY.",
+    "Two low-impact calendar value records and zero API errors do not establish complete high-impact coverage, revision handling, verified UTC, or historical known_at.",
+    "No macro prices, economic release values, credentials, account IDs, account balances or private filesystem paths are published."
+  ]
+}

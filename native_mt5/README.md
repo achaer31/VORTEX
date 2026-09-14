@@ -1,14 +1,19 @@
-# Native MT5 port: offline parity and read-only observation
+# Native MT5 port: signal parity, risk planning and read-only observation
 
 This is an implementation-validation stage. `VortexSignalCore.mqh` ports the
 frozen v0.2 indicator/feature calculations, six engine scores, consensus and pure
 mode voting to supplied arrays. `VortexParityCheck.mq5` compares that implementation
 through locally staged **synthetic** fixtures. `VortexNativeObserve.mq5` is a separate
-DEMO-only observation wrapper. None of these files is a trading activation.
+DEMO-only observation wrapper. `VortexRiskCore.mqh` now provides a separate pure
+risk planner; its contract and implementation limits are in
+[README-risk.md](README-risk.md). None of these files is a trading activation.
 
-The risk and execution adapters have **not** been ported here: no lot sizing,
-margin reservation, fills, partial exits, pyramids, protective-order management,
-daily-loss enforcement or broker reconciliation is implemented by this package.
+The risk planner calculates downward lot sizing, remaining margin allocation,
+adaptive exit volumes, winner-add eligibility and supplied daily-loss brakes.
+It receives facts from its caller and performs no broker/account/file calls.
+The native **execution adapter remains absent**: actual fills, partial closes,
+trailing/protective-order management, persistent daily-loss enforcement and
+broker reconciliation are not implemented by this planning module.
 Parity is not strategy profitability, a passed baseline, GO, or AUTONOMOUS READY.
 The frozen Python sources and historical reports remain unchanged.
 
@@ -27,25 +32,45 @@ outputs and numerical tolerances passed. The
 [sanitized parity record](validation-native-parity-2026-09-14.json) retains
 source and output hashes; compiler/run provenance is separate evidence.
 
-The separate observation wrapper also compiled with **0 errors and 0 warnings**
-(2,924 ms). Its MQL file property is `version "1.00"`; that packaging field does
-not rename the frozen strategy or core version. Its observation and expected-DEMO
-inputs were configured, and Start was submitted in MT5 with Allow Algo Trading
-unchecked. The local Mac then locked before the remote journal could be read;
-automatic unlock failed. **Observer operation remains unverified.** The
-[target validation record](validation-target-2026-09-14.json) records the attempt,
-source/transfer/compiler-log hashes and this blocker. A submitted Start action
-does not prove continued operation or unattended recovery.
+The separate observation wrapper compiled with **0 errors and 0 warnings**
+(2,924 ms). A subsequently copied journal verifies **175 records: 4 M5 decisions
+and 171 health records**, over 878.828 monotonic seconds. The decisions were
+contiguous without duplicates; five partial engine scores were finite, while
+ATLAS and consensus remained unavailable. Every record retained **FROZEN / WAIT**.
+The [observer validation record](validation-observer-2026-09-14.json) records
+the exact source/journal hashes and checks. This captured interval spans the
+observed Mac lock; it does not establish Mac shutdown, terminal/VPS restart,
+reboot recovery or any trading/PnL result. The earlier
+[target record](validation-target-2026-09-14.json) is retained as history of the
+initial verification blocker. Time labels remain subject to their original
+unverified UTC+0 clock assumption.
 
-All **29 local native tests** passed: 11 harness contracts, 6 observer contracts
-and 12 fixture/comparator tests. They are source/synthetic checks, separate from
-the observed native run and its parity comparison.
+The initial signal/observer test suite passed **29 local tests**: 11 harness
+contracts, 6 observer contracts and 12 fixture/comparator tests. These are
+source/synthetic checks, separate from observed native runs. The risk fixture
+suite additionally covers **155 synthetic cases** across sizing, mode, campaign
+and stop families. The current risk harness/core compiled in target MetaEditor
+with **0 errors and 0 warnings** (2,773 ms). Its actual native output returned
+**PARITY_PASS: 155 cases, zero differences**, including 1,433 numeric comparisons
+with maximum absolute error `1.1102230246251565e-16`. See the
+[native risk record](validation-native-risk-2026-09-14.json) and
+[risk validation details](README-risk.md#validation-status).
+
+The separate [context discovery record](validation-context-probe-2026-09-14.json)
+validates the copied probe output, not a usable context adapter. It reports a
+357-symbol catalog scan and a DXY metadata candidate; USDXOF was a false positive,
+and no ten-year keyword candidate was found. This does not prove the absence of
+every differently named yield product. Two low-impact USD calendar records were
+returned without API errors, but coverage and historical availability were not
+attested. **News and macro validity remain false**. See the
+[probe contract](README-context-probe.md).
 
 The research baseline remains **NO-GO / NOT_EVALUABLE**. The wrapper has
 no verified calendar coverage, DXY/US10y or session adapter for ATLAS and the
 mandatory context gates; missing inputs continue to require **FROZEN / WAIT**.
-The native risk/execution adapter is absent. No order, strategy-profitability
-claim or autonomy acceptance follows from this parity result.
+Pure native risk planning is available; its runtime facts and broker execution
+adapter are not. No order, strategy-profitability claim or autonomy acceptance
+follows from these implementation checks.
 
 ## Offline harness
 
@@ -182,6 +207,8 @@ adapter. It never manufactures external scores or converts missing context into
 permission to trade. It assumes the broker server is UTC+0 and checks consistency
 against the host clock; that comparison is not an independent UTC attestation.
 
-Stopping the script or closing the terminal ends observation. Neither the wrapper
-nor the parity harness establishes reboot recovery, a Windows service, unattended
-startup, Mac-disconnection endurance, broker reconciliation or autonomy readiness.
+Stopping the script or closing the terminal ends this script's observation.
+Its captured interval and the offline harness do not establish reboot recovery,
+unattended startup, broker reconciliation or autonomy readiness. The separate
+service wrapper has its own lifecycle and evidence; this script's result must not
+be used as proof that a service was installed or recovered after interruption.

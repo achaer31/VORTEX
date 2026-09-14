@@ -1,0 +1,75 @@
+{
+  "schema": "vortex.native.risk-validation.v1",
+  "date": "2026-09-14",
+  "status": "NATIVE_SYNTHETIC_ARITHMETIC_VERIFIED",
+  "source_sha256": {
+    "VortexRiskCore.mqh": "fd37290750cd4faee5f1fc325ec9aef4b1be0effdb1aeaa5e40b10f530c3579a",
+    "VortexRiskParityCheck.mq5": "27c08373532e816d26fa635ee0dbab9309ee8936bfbc2a1eef4a38ed6c7d4a53"
+  },
+  "compiler": {
+    "errors": 0,
+    "warnings": 0,
+    "elapsed_ms": 2773,
+    "log_sha256": "d105f49583e1b1978b04e73fa09363b0eea263df77cf992330fb94f197267694",
+    "installed_binary_sha256": "acb56f3a70fa2a8c493e1acacfc294814e68ead27889a3e211388418787809a0"
+  },
+  "installed_fixture_sha256": {
+    "fixture_kind.txt": "e54f9e343d831695023536240d8587da726072e315a119f08e3b4053d930c3a1",
+    "risk_campaign_cases.csv": "16836786f957c066575841c2208760a565ab0c62183be8fefdf24c529c238c96",
+    "risk_gate_cases.csv": "0d4a9c1eba00806714cf15aef33d5373b4dac340f97b528dee247a221d821e24",
+    "risk_size_cases.csv": "021c8fd49d0fda7de25a7611604bfbba91208c9ea8838a660e078e9e7a234915",
+    "risk_stop_cases.csv": "ec58501ca5533b6c78e508f520184889e8af005ac869eaacfd02d413d7960909"
+  },
+  "only_inputs_staged": true,
+  "comparison": {
+    "schema": "vortex.native.risk-comparison.v1",
+    "status": "PARITY_PASS",
+    "fixture_kind": "SYNTHETIC_OFFLINE_RISK_V1",
+    "core_version": "v0.2-risk-parity-1",
+    "harness_version": "VORTEX-NATIVE-RISK-PARITY-0.1",
+    "case_counts": {
+      "size": 36,
+      "gate": 24,
+      "campaign": 78,
+      "stop": 17
+    },
+    "total_cases": 155,
+    "difference_count": 0,
+    "differences": [],
+    "finite_numeric_pairs": 1433,
+    "max_absolute_numeric_error": 1.1102230246251565e-16,
+    "reference_manifest_sha256": "975d2b9d78616e3d1c22210669afdbc855c910da28a8fc54bd8a6aa051c74af8",
+    "native_files_sha256": {
+      "manifest.csv": "e59326add48c3040d00e26672b1a5ded49be57230e95c85c8583aec75c367596",
+      "risk_size_results.csv": "bd8704fb7b096785f31e673b3e30588988c277258ff10ed7c35494fd4e8fcdbb",
+      "risk_gate_results.csv": "e2f757385815402915ffa2ba425a529bc40d726071639d08d6f49139b3cb5a0f",
+      "risk_campaign_results.csv": "bdcbbd30a297b045506e5c381dc6782f989f90320663a08d286fc88fc4f13a2f",
+      "risk_stop_results.csv": "3704cce77323c63f2b951406b7a2c7a548a23dca41ab6be1005319e1fe362c3e"
+    },
+    "tolerances": {
+      "relative": 1e-10,
+      "absolute": 1e-09,
+      "allocation_absolute": 1e-12,
+      "zero_exact": true
+    },
+    "strategy_approval": false,
+    "execution_authorized": false,
+    "limitations": [
+      "Synthetic arithmetic and declared safety cases only; not profitability or execution approval.",
+      "Caller identity, freshness and calculator facts are assertions in these offline fixtures.",
+      "Source and original fixture transport require separate operator provenance evidence."
+    ]
+  },
+  "scope": {
+    "frozen_helper_comparisons": "Declared case scopes in hashed reference manifest; no full Decimal equivalence claim.",
+    "additional_safety_cases": "Independent required facts, aggregate margin, winner score bounds, cash drawdown boundaries and campaign rules.",
+    "intentional_differences": [
+      "Conservative binary lot underflooring at documented decimal edges.",
+      "Composite cash-boundary drawdown guard is stricter than the frozen raw floating helper."
+    ],
+    "broker_calculators_exercised": false,
+    "orders_sent": false,
+    "strategy_go": false,
+    "autonomous_ready": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "schema": "vortex.native.service-validation.v1",
+  "date": "2026-09-14",
+  "status": "READ_ONLY_SERVICE_INTERVAL_VERIFIED",
+  "source_sha256": {
+    "VortexNativeObserveService.mq5": "604769187acfbf89a45699c0ec7d2ac0a16a9e673edb721f91e25c19c0af0dc3",
+    "VortexNativeObserve.mq5": "a49ce45ad266dc58af1834d7dfd7d5cea753ff2c933191b9d977a7662aab6de8",
+    "VortexSignalCore.mqh": "0dfe474a3205931264bf170fdc93d0e2c14b8ba6218699e957a7f0585d59e547"
+  },
+  "compiler": {
+    "errors": 0,
+    "warnings": 0,
+    "elapsed_ms": 2163,
+    "log_sha256": "790c50c8feede315fe6ae3b5bbac12b373bd3bc408edc40b53ea90813f5b80a7",
+    "binary_sha256": "8457a35459fbdffe9c82173b8859e62fe86649f32f1e3995623d7be6b47de9a5"
+  },
+  "journal_sha256": "813e09580ccf7b69482fd9c05a7d28e7bd2437acac93740970c23b6fbe857904",
+  "records": 193,
+  "decision_records": 4,
+  "health_records": 189,
+  "first_host_label": "2026-09-14T10:05:29+00:00",
+  "last_host_label": "2026-09-14T10:21:39+00:00",
+  "elapsed_monotonic_seconds": 969.468,
+  "maximum_receipt_gap_ms": 5141,
+  "checks": {
+    "complete_lines": true,
+    "exact_column_width": true,
+    "continuous_sequence": true,
+    "monotonic_receipts": true,
+    "all_frozen_wait_readonly": true,
+    "original_snapshot_preserved": true,
+    "four_contiguous_m5_decisions": true,
+    "five_real_partial_scores": true,
+    "no_fabricated_atlas_consensus": true,
+    "health_fields_blank": true,
+    "mandatory_context_stays_invalid": true,
+    "decision_after_chart_closed": true,
+    "collector_prefix_XAUUSD_M5.csv": true,
+    "collector_prefix_heartbeat.csv": true,
+    "collector_prefix_XAUUSD_H1.csv": true,
+    "collector_prefix_XAUUSD_M15.csv": true,
+    "collector_prefix_symbol-spec.csv": true
+  },
+  "collector_capture_rows": {
+    "XAUUSD_M5.csv": 20,
+    "heartbeat.csv": 1177,
+    "XAUUSD_H1.csv": 2,
+    "XAUUSD_M15.csv": 7,
+    "symbol-spec.csv": 22
+  },
+  "collector_capture_sha256": {
+    "XAUUSD_M5.csv": "27bc50019b55d80637efb4138de19d8eba9f68ddff21ce66bceb55f8aa758c65",
+    "heartbeat.csv": "697cf748218cc49e01083c75dcbf4ba8ee2e3a21401c09c7d71bfbb63af28ca7",
+    "XAUUSD_H1.csv": "dfdc78112688739abd430cd85c0c5431362e326b040aa74284f21108458c3ee5",
+    "XAUUSD_M15.csv": "644523f7416b92c84c921e66245e09f731581b2570b9d49d6cd1ea0bd466c8e8",
+    "symbol-spec.csv": "beafe2257660ecc70f00c8ade37b025e1004f1f6605dc03c53173279831a4bc2"
+  },
+  "ui_observations": [
+    "The chart observer was removed through the active-program list; the separate evidence collector remained listed.",
+    "One service instance was configured for the expected DEMO, with Allow Algo Trading unchecked.",
+    "The former observer/test chart was closed; the subsequent 10:20 M5 observation exists in the continuing journal."
+  ],
+  "mode": "FROZEN",
+  "action": "WAIT",
+  "execution_enabled": false,
+  "strategy_go": false,
+  "autonomous_ready": false,
+  "limitations": [
+    "Actual read-only interval, not order execution or PnL.",
+    "Other charts and the collector remained open. Terminal and VPS were not restarted.",
+    "Mac shutdown, Astra closure, broker recovery, protective orders, positions and alerts were not exercised.",
+    "Receipt clock labels retain their unverified original basis.",
+    "The bootstrap decision occurred after its bar-close timestamp; it is not an executable historical entry.",
+    "Native risk planner is separately tested offline and is not called by this service."
+  ]
+}
