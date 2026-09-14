@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "structural_ok": true,
+  "time_basis": "broker_server_unknown_offset",
+  "historical_utc_offset_verified": false,
+  "tick_size": "0.001",
+  "files": {
+    "M5": {
+      "filename": "XAUUSD_M5.csv",
+      "sha256": "c739e3115b8d5e72c213a34fcf0b89ae7076a202fe3d2b7979e425d8fcf4cedf",
+      "rows": 34890,
+      "valid_rows": 34890,
+      "bad_rows": 0,
+      "header_ok": true,
+      "structural_errors": {},
+      "bad_row_examples": [],
+      "structural_ok": true,
+      "time_basis_values": [
+        "broker_server_unknown_offset"
+      ],
+      "symbols": [
+        "XAUUSD"
+      ],
+      "period": {
+        "first": "2026-03-18T04:55:00",
+        "last": "2026-09-14T04:45:00"
+      },
+      "observed_gaps": 127,
+      "largest_gap_seconds": 263100,
+      "manifest_check": {
+        "declared_count": "34890",
+        "copy_rates_return": "34890",
+        "checks": {
+          "actual_count": true,
+          "actual_first_open_server": true,
+          "actual_last_open_server": true
+        },
+        "matches": true
+      }
+    },
+    "M15": {
+      "filename": "XAUUSD_M15.csv",
+      "sha256": "dff80ed60ba831cf60203aadcf8f4f2b8662f49517002cf1532bdf5128f56777",
+      "rows": 11630,
+      "valid_rows": 11630,
+      "bad_rows": 0,
+      "header_ok": true,
+      "structural_errors": {},
+      "bad_row_examples": [],
+      "structural_ok": true,
+      "time_basis_values": [
+        "broker_server_unknown_offset"
+      ],
+      "symbols": [
+        "XAUUSD"
+      ],
+      "period": {
+        "first": "2026-03-18T05:00:00",
+        "last": "2026-09-14T04:30:00"
+      },
+      "observed_gaps": 127,
+      "largest_gap_seconds": 263700,
+      "manifest_check": {
+        "declared_count": "11630",
+        "copy_rates_return": "11630",
+        "checks": {
+          "actual_count": true,
+          "actual_first_open_server": true,
+          "actual_last_open_server": true
+        },
+        "matches": true
+      }
+    },
+    "H1": {
+      "filename": "XAUUSD_H1.csv",
+      "sha256": "1f36cf1067f12f0e0ff62557e2c281892c8ec26b932a492a65ca4489771b7f7e",
+      "rows": 2908,
+      "valid_rows": 2908,
+      "bad_rows": 0,
+      "header_ok": true,
+      "structural_errors": {},
+      "bad_row_examples": [],
+      "structural_ok": true,
+      "time_basis_values": [
+        "broker_server_unknown_offset"
+      ],
+      "symbols": [
+        "XAUUSD"
+      ],
+      "period": {
+        "first": "2026-03-18T05:00:00",
+        "last": "2026-09-14T03:00:00"
+      },
+      "observed_gaps": 127,
+      "largest_gap_seconds": 266400,
+      "manifest_check": {
+        "declared_count": "2908",
+        "copy_rates_return": "2908",
+        "checks": {
+          "actual_count": true,
+          "actual_first_open_server": true,
+          "actual_last_open_server": true
+        },
+        "matches": true
+      }
+    }
+  },
+  "manifest": {
+    "present": true,
+    "values": {
+      "export": {
+        "schema_version": "1",
+        "symbol": "XAUUSD",
+        "timezone": "broker_server_unknown_offset",
+        "snapshot_server_time": "2026-09-14T04:52:28",
+        "terminal_build": "6182",
+        "requested_history_days": "180",
+        "closed_bar_rule": "exclude snapshot interval and latest known MT5 bar; bar nominal end must not exceed snapshot",
+        "retry_policy": "one CopyRates call per timeframe; no automatic retry",
+        "run_status": "finished",
+        "metadata_written": "true",
+        "all_timeframes_have_written_bars": "true"
+      },
+      "M5": {
+        "filename": "XAUUSD_M5.csv",
+        "requested_start_server": "2026-03-18T04:52:28",
+        "requested_end_exclusive_server": "2026-09-14T04:50:00",
+        "period_seconds": "300",
+        "copy_rates_return": "34890",
+        "copy_rates_error": "0",
+        "copy_elapsed_ms": "718",
+        "series_synchronized": "true",
+        "terminal_first_bar_server": "2026-03-11T00:00:00",
+        "server_first_bar_server": "2018-06-28T00:00:00",
+        "latest_series_bar_open_server": "2026-09-14T04:50:00",
+        "effective_closed_end_exclusive_server": "2026-09-14T04:50:00",
+        "actual_count": "34890",
+        "actual_first_open_server": "2026-03-18T04:55:00",
+        "actual_last_open_server": "2026-09-14T04:45:00",
+        "skipped_open_or_out_of_range_count": "0",
+        "rejected_invalid_or_nonascending_count": "0",
+        "observed_gap_count": "127",
+        "largest_gap_seconds": "263100",
+        "start_coverage_short": "false",
+        "end_coverage_short": "false",
+        "history_incomplete": "unknown",
+        "completeness_verified": "false",
+        "export_status": "exported_available_bars",
+        "gap_interpretation": "market_closures_and_missing_data_not_distinguished"
+      },
+      "M15": {
+        "filename": "XAUUSD_M15.csv",
+        "requested_start_server": "2026-03-18T04:52:28",
+        "requested_end_exclusive_server": "2026-09-14T04:45:00",
+        "period_seconds": "900",
+        "copy_rates_return": "11630",
+        "copy_rates_error": "0",
+        "copy_elapsed_ms": "94",
+        "series_synchronized": "true",
+        "terminal_first_bar_server": "2026-02-10T00:00:00",
+        "server_first_bar_server": "2018-06-28T00:00:00",
+        "latest_series_bar_open_server": "2026-09-14T04:45:00",
+        "effective_closed_end_exclusive_server": "2026-09-14T04:45:00",
+        "actual_count": "11630",
+        "actual_first_open_server": "2026-03-18T05:00:00",
+        "actual_last_open_server": "2026-09-14T04:30:00",
+        "skipped_open_or_out_of_range_count": "0",
+        "rejected_invalid_or_nonascending_count": "0",
+        "observed_gap_count": "127",
+        "largest_gap_seconds": "263700",
+        "start_coverage_short": "false",
+        "end_coverage_short": "false",
+        "history_incomplete": "unknown",
+        "completeness_verified": "false",
+        "export_status": "exported_available_bars",
+        "gap_interpretation": "market_closures_and_missing_data_not_distinguished"
+      },
+      "H1": {
+        "filename": "XAUUSD_H1.csv",
+        "requested_start_server": "2026-03-18T04:52:28",
+        "requested_end_exclusive_server": "2026-09-14T04:00:00",
+        "period_seconds": "3600",
+        "copy_rates_return": "2908",
+        "copy_rates_error": "0",
+        "copy_elapsed_ms": "47",
+        "series_synchronized": "true",
+        "terminal_first_bar_server": "2025-12-11T00:00:00",
+        "server_first_bar_server": "2018-06-28T00:00:00",
+        "latest_series_bar_open_server": "2026-09-14T04:00:00",
+        "effective_closed_end_exclusive_server": "2026-09-14T04:00:00",
+        "actual_count": "2908",
+        "actual_first_open_server": "2026-03-18T05:00:00",
+        "actual_last_open_server": "2026-09-14T03:00:00",
+        "skipped_open_or_out_of_range_count": "0",
+        "rejected_invalid_or_nonascending_count": "0",
+        "observed_gap_count": "127",
+        "largest_gap_seconds": "266400",
+        "start_coverage_short": "false",
+        "end_coverage_short": "false",
+        "history_incomplete": "unknown",
+        "completeness_verified": "false",
+        "export_status": "exported_available_bars",
+        "gap_interpretation": "market_closures_and_missing_data_not_distinguished"
+      }
+    },
+    "statuses": {
+      "export": {
+        "schema_version": "ok",
+        "symbol": "ok",
+        "timezone": "unknown_offset_and_dst",
+        "snapshot_server_time": "ok",
+        "terminal_build": "ok",
+        "requested_history_days": "ok",
+        "closed_bar_rule": "ok",
+        "retry_policy": "ok",
+        "run_status": "ok",
+        "metadata_written": "ok",
+        "all_timeframes_have_written_bars": "ok"
+      },
+      "M5": {
+        "filename": "ok",
+        "requested_start_server": "ok",
+        "requested_end_exclusive_server": "ok",
+        "period_seconds": "ok",
+        "copy_rates_return": "ok",
+        "copy_rates_error": "ok",
+        "copy_elapsed_ms": "ok",
+        "series_synchronized": "ok",
+        "terminal_first_bar_server": "ok",
+        "server_first_bar_server": "ok",
+        "latest_series_bar_open_server": "ok",
+        "effective_closed_end_exclusive_server": "ok",
+        "actual_count": "ok",
+        "actual_first_open_server": "ok",
+        "actual_last_open_server": "ok",
+        "skipped_open_or_out_of_range_count": "ok",
+        "rejected_invalid_or_nonascending_count": "ok",
+        "observed_gap_count": "ok",
+        "largest_gap_seconds": "ok",
+        "start_coverage_short": "ok",
+        "end_coverage_short": "ok",
+        "history_incomplete": "conservative_not_a_completeness_certificate",
+        "completeness_verified": "ok",
+        "export_status": "ok",
+        "gap_interpretation": "ok"
+      },
+      "M15": {
+        "filename": "ok",
+        "requested_start_server": "ok",
+        "requested_end_exclusive_server": "ok",
+        "period_seconds": "ok",
+        "copy_rates_return": "ok",
+        "copy_rates_error": "ok",
+        "copy_elapsed_ms": "ok",
+        "series_synchronized": "ok",
+        "terminal_first_bar_server": "ok",
+        "server_first_bar_server": "ok",
+        "latest_series_bar_open_server": "ok",
+        "effective_closed_end_exclusive_server": "ok",
+        "actual_count": "ok",
+        "actual_first_open_server": "ok",
+        "actual_last_open_server": "ok",
+        "skipped_open_or_out_of_range_count": "ok",
+        "rejected_invalid_or_nonascending_count": "ok",
+        "observed_gap_count": "ok",
+        "largest_gap_seconds": "ok",
+        "start_coverage_short": "ok",
+        "end_coverage_short": "ok",
+        "history_incomplete": "conservative_not_a_completeness_certificate",
+        "completeness_verified": "ok",
+        "export_status": "ok",
+        "gap_interpretation": "ok"
+      },
+      "H1": {
+        "filename": "ok",
+        "requested_start_server": "ok",
+        "requested_end_exclusive_server": "ok",
+        "period_seconds": "ok",
+        "copy_rates_return": "ok",
+        "copy_rates_error": "ok",
+        "copy_elapsed_ms": "ok",
+        "series_synchronized": "ok",
+        "terminal_first_bar_server": "ok",
+        "server_first_bar_server": "ok",
+        "latest_series_bar_open_server": "ok",
+        "effective_closed_end_exclusive_server": "ok",
+        "actual_count": "ok",
+        "actual_first_open_server": "ok",
+        "actual_last_open_server": "ok",
+        "skipped_open_or_out_of_range_count": "ok",
+        "rejected_invalid_or_nonascending_count": "ok",
+        "observed_gap_count": "ok",
+        "largest_gap_seconds": "ok",
+        "start_coverage_short": "ok",
+        "end_coverage_short": "ok",
+        "history_incomplete": "conservative_not_a_completeness_certificate",
+        "completeness_verified": "ok",
+        "export_status": "ok",
+        "gap_interpretation": "ok"
+      }
+    },
+    "duplicate_keys": 1,
+    "parse_errors": [],
+    "sha256": "233585533eef8b66d889130e696d388b4d9c5b0a9f4fafa5473d481e703b8ccc"
+  },
+  "aggregates": {
+    "M15": {
+      "status": "compared",
+      "source": "M5",
+      "target": "M15",
+      "expected_m5_bars_per_group": 3,
+      "observed_groups": 11632,
+      "full_groups": 11628,
+      "skipped_incomplete": 4,
+      "missing_htf": 0,
+      "compared_groups": 11628,
+      "matching_groups": 11628,
+      "mismatching_groups": 0,
+      "mismatches_by_field": {
+        "open": 0,
+        "high": 0,
+        "low": 0,
+        "close": 0,
+        "tick_volume": 0,
+        "real_volume": 0
+      },
+      "mismatch_examples": [],
+      "missing_htf_examples": [],
+      "unrepresented_htf_bars": 0,
+      "review_required": false,
+      "price_comparison": "exact integer ticks of 0.001",
+      "gap_policy": "Only observed buckets considered; no session filling or closure inference."
+    },
+    "H1": {
+      "status": "compared",
+      "source": "M5",
+      "target": "H1",
+      "expected_m5_bars_per_group": 12,
+      "observed_groups": 2910,
+      "full_groups": 2903,
+      "skipped_incomplete": 7,
+      "missing_htf": 0,
+      "compared_groups": 2903,
+      "matching_groups": 2903,
+      "mismatching_groups": 0,
+      "mismatches_by_field": {
+        "open": 0,
+        "high": 0,
+        "low": 0,
+        "close": 0,
+        "tick_volume": 0,
+        "real_volume": 0
+      },
+      "mismatch_examples": [],
+      "missing_htf_examples": [],
+      "unrepresented_htf_bars": 0,
+      "review_required": false,
+      "price_comparison": "exact integer ticks of 0.001",
+      "gap_policy": "Only observed buckets considered; no session filling or closure inference."
+    }
+  },
+  "review_findings": [],
+  "csv_sha256": {
+    "XAUUSD_H1.csv": "1f36cf1067f12f0e0ff62557e2c281892c8ec26b932a492a65ca4489771b7f7e",
+    "XAUUSD_M15.csv": "dff80ed60ba831cf60203aadcf8f4f2b8662f49517002cf1532bdf5128f56777",
+    "XAUUSD_M5.csv": "c739e3115b8d5e72c213a34fcf0b89ae7076a202fe3d2b7979e425d8fcf4cedf",
+    "manifest.csv": "233585533eef8b66d889130e696d388b4d9c5b0a9f4fafa5473d481e703b8ccc",
+    "metadata.csv": "95c9ddaf1f28d03aaba494421dedcc36a9b8200af4b2d893e59b7d9b790d409f",
+    "validation-summary.csv": "35ef9c75f78a472a821d1f640931b8901b19716fec6d3f9b6f638e7fb48f8db3"
+  },
+  "completeness_verified": false,
+  "limitations": [
+    "Gaps may be closures or absent history; no market calendar applied.",
+    "OHLC and bar spread cannot reconstruct intrabar Bid/Ask execution.",
+    "Passing structure and aggregation does not establish historical completeness."
+  ],
+  "review_required": false
+}

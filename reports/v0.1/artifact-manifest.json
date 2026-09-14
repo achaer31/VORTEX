@@ -1,0 +1,541 @@
+{
+  "note": "Fingerprints of original local experiment artifacts. Large derived CSVs are retained locally and omitted from Git. See README.md.",
+  "files": {
+    "audit.json": {
+      "bytes": 13470,
+      "sha256": "44a6c1cc630c6578fe3a586359455f280b268c5501de7e2589383d344a50d64d"
+    },
+    "SIZING-DIAGNOSIS.md": {
+      "bytes": 3667,
+      "sha256": "8f7b25f8dee92f509e193f0fdfc86241fc8c01a677cb8525922ca7954e9d646c"
+    },
+    "REPORT.md": {
+      "bytes": 7154,
+      "sha256": "1c2a414d85c435d3e62bb283b5dcfc09f625875c0781b2706d2aeac2d565f088"
+    },
+    "summaries.csv": {
+      "bytes": 4451,
+      "sha256": "23fc83f822539abcc4387b4b0c26a12ab56239f1084d186939aabe256ec16c07"
+    },
+    "experiment.json": {
+      "bytes": 7470,
+      "sha256": "5581f3fb4b9e4ec0d40fd7c0fb39d5b9a7712921dc8afc6ebd22dd28a6f47213"
+    },
+    "signals.csv": {
+      "bytes": 11922529,
+      "sha256": "634c527ac4be512867991a3216af24aee4a6acb31b939681c16aa99c1621e3a4"
+    },
+    "scenarios/full_risk7p5_baseline/summary.json": {
+      "bytes": 2889,
+      "sha256": "c195cc33bd21a90adbc3e463f6eaecdb6c4f40a406febd3d275948842f12e1f7"
+    },
+    "scenarios/full_risk7p5_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/full_risk7p5_baseline/events.csv": {
+      "bytes": 1354194,
+      "sha256": "03a026bd58437069132f0a01d97009cf6e3e54341c160045b6ed7ff84b9baaa4"
+    },
+    "scenarios/full_risk7p5_baseline/equity.csv": {
+      "bytes": 2686665,
+      "sha256": "2032f1409cd03d646e30a5e44d830ebbbce7343d6c2014c4bc819241c7e71457"
+    },
+    "scenarios/full_risk10_baseline/summary.json": {
+      "bytes": 2887,
+      "sha256": "092c2672ecdcaa6505a54f0e700ede69411fa02089e787a4e2b6e0d600cee2e4"
+    },
+    "scenarios/full_risk10_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/full_risk10_baseline/events.csv": {
+      "bytes": 1354194,
+      "sha256": "03a026bd58437069132f0a01d97009cf6e3e54341c160045b6ed7ff84b9baaa4"
+    },
+    "scenarios/full_risk10_baseline/equity.csv": {
+      "bytes": 2686665,
+      "sha256": "2032f1409cd03d646e30a5e44d830ebbbce7343d6c2014c4bc819241c7e71457"
+    },
+    "scenarios/holdout_risk10_baseline/summary.json": {
+      "bytes": 2864,
+      "sha256": "5e9288f8d1242e0f25c9ca30433132162bae58817f3056d86a4dcf7e9583d755"
+    },
+    "scenarios/holdout_risk10_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/holdout_risk10_baseline/events.csv": {
+      "bytes": 270629,
+      "sha256": "152a33b5c1470b6ca38c414e67eb841b07cecd299d1e15c0d3dfd535b11e11ae"
+    },
+    "scenarios/holdout_risk10_baseline/equity.csv": {
+      "bytes": 535362,
+      "sha256": "7b415d8ff407e72f7e0f4d0cb5936f68400e81124ad6b61f19a58e2553279c22"
+    },
+    "scenarios/holdout_risk3_baseline/summary.json": {
+      "bytes": 2865,
+      "sha256": "e9061fd4a5279d267c567998decb70ba5ef2eaebb602e55ae51d51bf0c468c25"
+    },
+    "scenarios/holdout_risk3_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/holdout_risk3_baseline/events.csv": {
+      "bytes": 270629,
+      "sha256": "152a33b5c1470b6ca38c414e67eb841b07cecd299d1e15c0d3dfd535b11e11ae"
+    },
+    "scenarios/holdout_risk3_baseline/equity.csv": {
+      "bytes": 535362,
+      "sha256": "7b415d8ff407e72f7e0f4d0cb5936f68400e81124ad6b61f19a58e2553279c22"
+    },
+    "scenarios/full_risk3_baseline/summary.json": {
+      "bytes": 2888,
+      "sha256": "566d9d5698f636a0e7923f7004efd0ac53232b4d404c314a1aa0593b2155d7b4"
+    },
+    "scenarios/full_risk3_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/full_risk3_baseline/events.csv": {
+      "bytes": 1354194,
+      "sha256": "03a026bd58437069132f0a01d97009cf6e3e54341c160045b6ed7ff84b9baaa4"
+    },
+    "scenarios/full_risk3_baseline/equity.csv": {
+      "bytes": 2686665,
+      "sha256": "2032f1409cd03d646e30a5e44d830ebbbce7343d6c2014c4bc819241c7e71457"
+    },
+    "scenarios/holdout_risk7p5_baseline/summary.json": {
+      "bytes": 2866,
+      "sha256": "8e5ae047746777998d45d6512cd6c1635dfa411f0dc2401279667d38da0b7f46"
+    },
+    "scenarios/holdout_risk7p5_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/holdout_risk7p5_baseline/events.csv": {
+      "bytes": 270629,
+      "sha256": "152a33b5c1470b6ca38c414e67eb841b07cecd299d1e15c0d3dfd535b11e11ae"
+    },
+    "scenarios/holdout_risk7p5_baseline/equity.csv": {
+      "bytes": 535362,
+      "sha256": "7b415d8ff407e72f7e0f4d0cb5936f68400e81124ad6b61f19a58e2553279c22"
+    },
+    "scenarios/holdout_risk5_baseline/summary.json": {
+      "bytes": 2865,
+      "sha256": "468e7aefb4ff7daeec4772af9a514bc66e18f2287af0458d2da6bb8e217778bd"
+    },
+    "scenarios/holdout_risk5_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/holdout_risk5_baseline/events.csv": {
+      "bytes": 270629,
+      "sha256": "152a33b5c1470b6ca38c414e67eb841b07cecd299d1e15c0d3dfd535b11e11ae"
+    },
+    "scenarios/holdout_risk5_baseline/equity.csv": {
+      "bytes": 535362,
+      "sha256": "7b415d8ff407e72f7e0f4d0cb5936f68400e81124ad6b61f19a58e2553279c22"
+    },
+    "scenarios/full_risk5_baseline/summary.json": {
+      "bytes": 2888,
+      "sha256": "81d6660bb3b9a17842a5c18fca952278d185017d62fe9970d975138597c7551b"
+    },
+    "scenarios/full_risk5_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/full_risk5_baseline/events.csv": {
+      "bytes": 1354194,
+      "sha256": "03a026bd58437069132f0a01d97009cf6e3e54341c160045b6ed7ff84b9baaa4"
+    },
+    "scenarios/full_risk5_baseline/equity.csv": {
+      "bytes": 2686665,
+      "sha256": "2032f1409cd03d646e30a5e44d830ebbbce7343d6c2014c4bc819241c7e71457"
+    },
+    "scenarios/holdout_risk7p5_stress/summary.json": {
+      "bytes": 2865,
+      "sha256": "bee803880a04ddbd9b84da8b6cca00b9e20ecf7a734d8a37564b03cb57b38a14"
+    },
+    "scenarios/holdout_risk7p5_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/holdout_risk7p5_stress/events.csv": {
+      "bytes": 270629,
+      "sha256": "152a33b5c1470b6ca38c414e67eb841b07cecd299d1e15c0d3dfd535b11e11ae"
+    },
+    "scenarios/holdout_risk7p5_stress/equity.csv": {
+      "bytes": 535362,
+      "sha256": "7b415d8ff407e72f7e0f4d0cb5936f68400e81124ad6b61f19a58e2553279c22"
+    },
+    "scenarios/full_risk7p5_stress/summary.json": {
+      "bytes": 2888,
+      "sha256": "d9b5919d3e0fc07c30bafde22a0a1d4bf5e64a4bc794a3b58ba0de20661ee2be"
+    },
+    "scenarios/full_risk7p5_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/full_risk7p5_stress/events.csv": {
+      "bytes": 1354194,
+      "sha256": "03a026bd58437069132f0a01d97009cf6e3e54341c160045b6ed7ff84b9baaa4"
+    },
+    "scenarios/full_risk7p5_stress/equity.csv": {
+      "bytes": 2686665,
+      "sha256": "2032f1409cd03d646e30a5e44d830ebbbce7343d6c2014c4bc819241c7e71457"
+    },
+    "scenarios/holdout_risk10_stress/summary.json": {
+      "bytes": 2863,
+      "sha256": "420847dd7e9517d2781b7d3ee85d67ebf9fe21674ca4bac0b7beec0e54b7381b"
+    },
+    "scenarios/holdout_risk10_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/holdout_risk10_stress/events.csv": {
+      "bytes": 270629,
+      "sha256": "152a33b5c1470b6ca38c414e67eb841b07cecd299d1e15c0d3dfd535b11e11ae"
+    },
+    "scenarios/holdout_risk10_stress/equity.csv": {
+      "bytes": 535362,
+      "sha256": "7b415d8ff407e72f7e0f4d0cb5936f68400e81124ad6b61f19a58e2553279c22"
+    },
+    "scenarios/development_risk10_stress/summary.json": {
+      "bytes": 2884,
+      "sha256": "ec70fcb2c06df708af4bb53f89da71be9ddc0f8003bf2dba5abf6f7b55bc3b58"
+    },
+    "scenarios/development_risk10_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/development_risk10_stress/events.csv": {
+      "bytes": 815133,
+      "sha256": "235f9129123e17076c0c5154e70858799eb016b22e4416d5828524f513f0ee07"
+    },
+    "scenarios/development_risk10_stress/equity.csv": {
+      "bytes": 1620138,
+      "sha256": "10d50346476954b07cf9164f0e77ff8db7c814ae294c3059dccdb9cee0a617ab"
+    },
+    "scenarios/validation_risk10_baseline/summary.json": {
+      "bytes": 2864,
+      "sha256": "dea9d14d9bfcf33f477916ae8ee1d6e44c43a9f7e6e3641bf096704433f2248d"
+    },
+    "scenarios/validation_risk10_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/validation_risk10_baseline/events.csv": {
+      "bytes": 268504,
+      "sha256": "7c5d474c36032e8ac937a0261aa487060b1824d0d2cfb07f90e48eb63cb7b2d7"
+    },
+    "scenarios/validation_risk10_baseline/equity.csv": {
+      "bytes": 531435,
+      "sha256": "2ce3f831980ac987da3df23144fb29a413a98b53b6d1117fa0b2eb2ca9b1bc98"
+    },
+    "scenarios/holdout_risk3_stress/summary.json": {
+      "bytes": 2864,
+      "sha256": "b6def6c638fb9ba4b0b5b8152704b259523e1560b5098977fd770f4dc698b4e3"
+    },
+    "scenarios/holdout_risk3_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/holdout_risk3_stress/events.csv": {
+      "bytes": 270629,
+      "sha256": "152a33b5c1470b6ca38c414e67eb841b07cecd299d1e15c0d3dfd535b11e11ae"
+    },
+    "scenarios/holdout_risk3_stress/equity.csv": {
+      "bytes": 535362,
+      "sha256": "7b415d8ff407e72f7e0f4d0cb5936f68400e81124ad6b61f19a58e2553279c22"
+    },
+    "scenarios/development_risk10_baseline/summary.json": {
+      "bytes": 2885,
+      "sha256": "898393e0e7b087b8c6f4c597293a9a682c553efd450461d6c41afcff9ef6765b"
+    },
+    "scenarios/development_risk10_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/development_risk10_baseline/events.csv": {
+      "bytes": 815133,
+      "sha256": "235f9129123e17076c0c5154e70858799eb016b22e4416d5828524f513f0ee07"
+    },
+    "scenarios/development_risk10_baseline/equity.csv": {
+      "bytes": 1620138,
+      "sha256": "10d50346476954b07cf9164f0e77ff8db7c814ae294c3059dccdb9cee0a617ab"
+    },
+    "scenarios/validation_risk3_baseline/summary.json": {
+      "bytes": 2865,
+      "sha256": "0fd2cf7ba32d915d93e119d4d7aa811604942617302d9ba8ef20b709ec8cc536"
+    },
+    "scenarios/validation_risk3_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/validation_risk3_baseline/events.csv": {
+      "bytes": 268504,
+      "sha256": "7c5d474c36032e8ac937a0261aa487060b1824d0d2cfb07f90e48eb63cb7b2d7"
+    },
+    "scenarios/validation_risk3_baseline/equity.csv": {
+      "bytes": 531435,
+      "sha256": "2ce3f831980ac987da3df23144fb29a413a98b53b6d1117fa0b2eb2ca9b1bc98"
+    },
+    "scenarios/validation_risk7p5_baseline/summary.json": {
+      "bytes": 2866,
+      "sha256": "a6c2b513ea5af60d6adbf35d3bcc0062982f2658fc9244a85d8eb9c6032ab4dc"
+    },
+    "scenarios/validation_risk7p5_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/validation_risk7p5_baseline/events.csv": {
+      "bytes": 268504,
+      "sha256": "7c5d474c36032e8ac937a0261aa487060b1824d0d2cfb07f90e48eb63cb7b2d7"
+    },
+    "scenarios/validation_risk7p5_baseline/equity.csv": {
+      "bytes": 531435,
+      "sha256": "2ce3f831980ac987da3df23144fb29a413a98b53b6d1117fa0b2eb2ca9b1bc98"
+    },
+    "scenarios/development_risk3_baseline/summary.json": {
+      "bytes": 2886,
+      "sha256": "89a51686403487460c774166b69a22ef5cae46b8d676515bb66540e39d1450a2"
+    },
+    "scenarios/development_risk3_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/development_risk3_baseline/events.csv": {
+      "bytes": 815133,
+      "sha256": "235f9129123e17076c0c5154e70858799eb016b22e4416d5828524f513f0ee07"
+    },
+    "scenarios/development_risk3_baseline/equity.csv": {
+      "bytes": 1620138,
+      "sha256": "10d50346476954b07cf9164f0e77ff8db7c814ae294c3059dccdb9cee0a617ab"
+    },
+    "scenarios/validation_risk5_stress/summary.json": {
+      "bytes": 2864,
+      "sha256": "54e4e190029767f10f29c859cc8ad9d68339b95d2cb3ad805d571320057eaf81"
+    },
+    "scenarios/validation_risk5_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/validation_risk5_stress/events.csv": {
+      "bytes": 268504,
+      "sha256": "7c5d474c36032e8ac937a0261aa487060b1824d0d2cfb07f90e48eb63cb7b2d7"
+    },
+    "scenarios/validation_risk5_stress/equity.csv": {
+      "bytes": 531435,
+      "sha256": "2ce3f831980ac987da3df23144fb29a413a98b53b6d1117fa0b2eb2ca9b1bc98"
+    },
+    "scenarios/development_risk3_stress/summary.json": {
+      "bytes": 2885,
+      "sha256": "6769b37cb21d9068d3bb98c2941f439cd470bbe9451a23127e25d54d8b6a0133"
+    },
+    "scenarios/development_risk3_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/development_risk3_stress/events.csv": {
+      "bytes": 815133,
+      "sha256": "235f9129123e17076c0c5154e70858799eb016b22e4416d5828524f513f0ee07"
+    },
+    "scenarios/development_risk3_stress/equity.csv": {
+      "bytes": 1620138,
+      "sha256": "10d50346476954b07cf9164f0e77ff8db7c814ae294c3059dccdb9cee0a617ab"
+    },
+    "scenarios/full_risk3_stress/summary.json": {
+      "bytes": 2887,
+      "sha256": "a7fb2542e68f6c49585beb9eccd7bb90612ef670d0d46dee5e610d4ecf9282f5"
+    },
+    "scenarios/full_risk3_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/full_risk3_stress/events.csv": {
+      "bytes": 1354194,
+      "sha256": "03a026bd58437069132f0a01d97009cf6e3e54341c160045b6ed7ff84b9baaa4"
+    },
+    "scenarios/full_risk3_stress/equity.csv": {
+      "bytes": 2686665,
+      "sha256": "2032f1409cd03d646e30a5e44d830ebbbce7343d6c2014c4bc819241c7e71457"
+    },
+    "scenarios/development_risk7p5_baseline/summary.json": {
+      "bytes": 2887,
+      "sha256": "a8acae0cb720e7860019dbdffc44da9ec70d1155e414f982a314732ec2d26cff"
+    },
+    "scenarios/development_risk7p5_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/development_risk7p5_baseline/events.csv": {
+      "bytes": 815133,
+      "sha256": "235f9129123e17076c0c5154e70858799eb016b22e4416d5828524f513f0ee07"
+    },
+    "scenarios/development_risk7p5_baseline/equity.csv": {
+      "bytes": 1620138,
+      "sha256": "10d50346476954b07cf9164f0e77ff8db7c814ae294c3059dccdb9cee0a617ab"
+    },
+    "scenarios/validation_risk3_stress/summary.json": {
+      "bytes": 2864,
+      "sha256": "028514533db3e3113e8159038dd3cb9466f79665058b2cd50c4fbbbfc2238d4d"
+    },
+    "scenarios/validation_risk3_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/validation_risk3_stress/events.csv": {
+      "bytes": 268504,
+      "sha256": "7c5d474c36032e8ac937a0261aa487060b1824d0d2cfb07f90e48eb63cb7b2d7"
+    },
+    "scenarios/validation_risk3_stress/equity.csv": {
+      "bytes": 531435,
+      "sha256": "2ce3f831980ac987da3df23144fb29a413a98b53b6d1117fa0b2eb2ca9b1bc98"
+    },
+    "scenarios/holdout_risk5_stress/summary.json": {
+      "bytes": 2864,
+      "sha256": "d07dcd8b8b3f74887c674b2f595192cc0695db1c9a816734f6d61a94c19348e2"
+    },
+    "scenarios/holdout_risk5_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/holdout_risk5_stress/events.csv": {
+      "bytes": 270629,
+      "sha256": "152a33b5c1470b6ca38c414e67eb841b07cecd299d1e15c0d3dfd535b11e11ae"
+    },
+    "scenarios/holdout_risk5_stress/equity.csv": {
+      "bytes": 535362,
+      "sha256": "7b415d8ff407e72f7e0f4d0cb5936f68400e81124ad6b61f19a58e2553279c22"
+    },
+    "scenarios/validation_risk10_stress/summary.json": {
+      "bytes": 2863,
+      "sha256": "130ab27e2965ddd6940c3d8880348bedfe2c2c5753438cc1018225684479cf93"
+    },
+    "scenarios/validation_risk10_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/validation_risk10_stress/events.csv": {
+      "bytes": 268504,
+      "sha256": "7c5d474c36032e8ac937a0261aa487060b1824d0d2cfb07f90e48eb63cb7b2d7"
+    },
+    "scenarios/validation_risk10_stress/equity.csv": {
+      "bytes": 531435,
+      "sha256": "2ce3f831980ac987da3df23144fb29a413a98b53b6d1117fa0b2eb2ca9b1bc98"
+    },
+    "scenarios/validation_risk7p5_stress/summary.json": {
+      "bytes": 2865,
+      "sha256": "78259aaa3ac752fb85fe96c2210db64eaa5d7d40e10d2035eda2081aca9566ef"
+    },
+    "scenarios/validation_risk7p5_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/validation_risk7p5_stress/events.csv": {
+      "bytes": 268504,
+      "sha256": "7c5d474c36032e8ac937a0261aa487060b1824d0d2cfb07f90e48eb63cb7b2d7"
+    },
+    "scenarios/validation_risk7p5_stress/equity.csv": {
+      "bytes": 531435,
+      "sha256": "2ce3f831980ac987da3df23144fb29a413a98b53b6d1117fa0b2eb2ca9b1bc98"
+    },
+    "scenarios/development_risk7p5_stress/summary.json": {
+      "bytes": 2886,
+      "sha256": "232bd5a1087665e261ff4a0f316477c6124fe4a44fe19b78d4738677e6cced2a"
+    },
+    "scenarios/development_risk7p5_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/development_risk7p5_stress/events.csv": {
+      "bytes": 815133,
+      "sha256": "235f9129123e17076c0c5154e70858799eb016b22e4416d5828524f513f0ee07"
+    },
+    "scenarios/development_risk7p5_stress/equity.csv": {
+      "bytes": 1620138,
+      "sha256": "10d50346476954b07cf9164f0e77ff8db7c814ae294c3059dccdb9cee0a617ab"
+    },
+    "scenarios/full_risk10_stress/summary.json": {
+      "bytes": 2886,
+      "sha256": "ef6bc6b2ec1bb75634e7c4deca7192698dcbb9472e1505dff17d04b7190f7b90"
+    },
+    "scenarios/full_risk10_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/full_risk10_stress/events.csv": {
+      "bytes": 1354194,
+      "sha256": "03a026bd58437069132f0a01d97009cf6e3e54341c160045b6ed7ff84b9baaa4"
+    },
+    "scenarios/full_risk10_stress/equity.csv": {
+      "bytes": 2686665,
+      "sha256": "2032f1409cd03d646e30a5e44d830ebbbce7343d6c2014c4bc819241c7e71457"
+    },
+    "scenarios/validation_risk5_baseline/summary.json": {
+      "bytes": 2865,
+      "sha256": "9de769dc1d18ee00576ee42b813409fecc6078973334059a82ad51736111dd0e"
+    },
+    "scenarios/validation_risk5_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/validation_risk5_baseline/events.csv": {
+      "bytes": 268504,
+      "sha256": "7c5d474c36032e8ac937a0261aa487060b1824d0d2cfb07f90e48eb63cb7b2d7"
+    },
+    "scenarios/validation_risk5_baseline/equity.csv": {
+      "bytes": 531435,
+      "sha256": "2ce3f831980ac987da3df23144fb29a413a98b53b6d1117fa0b2eb2ca9b1bc98"
+    },
+    "scenarios/development_risk5_baseline/summary.json": {
+      "bytes": 2886,
+      "sha256": "fd5742522e643c05b74aec43b452bbe33539cb52246a1fe1e8b7b43d64687753"
+    },
+    "scenarios/development_risk5_baseline/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/development_risk5_baseline/events.csv": {
+      "bytes": 815133,
+      "sha256": "235f9129123e17076c0c5154e70858799eb016b22e4416d5828524f513f0ee07"
+    },
+    "scenarios/development_risk5_baseline/equity.csv": {
+      "bytes": 1620138,
+      "sha256": "10d50346476954b07cf9164f0e77ff8db7c814ae294c3059dccdb9cee0a617ab"
+    },
+    "scenarios/development_risk5_stress/summary.json": {
+      "bytes": 2885,
+      "sha256": "d4acef1a8209777e4a20947689edbf90a8c333a69629e80cb9f0712db9fa251a"
+    },
+    "scenarios/development_risk5_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/development_risk5_stress/events.csv": {
+      "bytes": 815133,
+      "sha256": "235f9129123e17076c0c5154e70858799eb016b22e4416d5828524f513f0ee07"
+    },
+    "scenarios/development_risk5_stress/equity.csv": {
+      "bytes": 1620138,
+      "sha256": "10d50346476954b07cf9164f0e77ff8db7c814ae294c3059dccdb9cee0a617ab"
+    },
+    "scenarios/full_risk5_stress/summary.json": {
+      "bytes": 2887,
+      "sha256": "9471e6d7b2a8a4d76dcc7d63a13fa9836243d54455de23ba68a83fa661f6f74e"
+    },
+    "scenarios/full_risk5_stress/trades.csv": {
+      "bytes": 38,
+      "sha256": "9fa96dc93225227d11def6a3daedaf5c577764bc8e178566f761d1b1e6c90355"
+    },
+    "scenarios/full_risk5_stress/events.csv": {
+      "bytes": 1354194,
+      "sha256": "03a026bd58437069132f0a01d97009cf6e3e54341c160045b6ed7ff84b9baaa4"
+    },
+    "scenarios/full_risk5_stress/equity.csv": {
+      "bytes": 2686665,
+      "sha256": "2032f1409cd03d646e30a5e44d830ebbbce7343d6c2014c4bc819241c7e71457"
+    }
+  }
+}

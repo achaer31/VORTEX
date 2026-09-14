@@ -1,0 +1,218 @@
+{
+  "experiment_version": "xau-50-fixed-grid-v0.1",
+  "model_version": "VORTEX-XAU-v0.1",
+  "status": "completed",
+  "frozen_at_utc": "2026-09-14T05:31:35.792651+00:00",
+  "new_hypothesis_not_replication_of_missing_original": true,
+  "parameter_selection": "fixed_grid_no_optimization_no_winner_selection",
+  "risk_fractions": [
+    0.03,
+    0.05,
+    0.075,
+    0.1
+  ],
+  "cost_profiles": {
+    "baseline": {
+      "spread_multiplier": 1.0,
+      "slippage_per_ounce": 0.03
+    },
+    "stress": {
+      "spread_multiplier": 2.0,
+      "slippage_per_ounce": 0.1
+    }
+  },
+  "base_simulator_config": {
+    "starting_cash": 50.0,
+    "risk_fraction": 0.03,
+    "contract_size": 100.0,
+    "lot_min": 0.01,
+    "lot_step": 0.01,
+    "point": 0.001,
+    "tick_size": 0.001,
+    "leverage": 2000.0,
+    "max_margin_fraction": 0.25,
+    "stop_atr_multiple": 2.2,
+    "min_stop_ticks": 10,
+    "target_r": 2.2,
+    "max_holding_bars": 36,
+    "spread_multiplier": 1.0,
+    "slippage_per_ounce": 0.03,
+    "commission_per_lot_per_side": 0.0,
+    "timeframe_minutes": 5,
+    "session_start_hour": 8,
+    "session_end_hour": 18,
+    "daily_loss_fraction": 0.15
+  },
+  "signal_weights": {
+    "orion": 0.22,
+    "vortex": 0.18,
+    "nova": 0.2,
+    "luna": 0.15,
+    "kira": 0.1,
+    "atlas": 0.15
+  },
+  "signal_definition": "SIGNALS.md and hash-pinned vortex_xau/signals.py",
+  "planned_scenario_count": 32,
+  "starting_cash_each_scenario": 50.0,
+  "split_rule": "floor(calendar_days*0.60) development; floor(calendar_days*0.20) validation; remainder holdout",
+  "indicator_history": "causal full-data features; independent account and positions per partition",
+  "first_bar_of_each_partition": "no entry without previous bar inside that partition",
+  "full_period_interpretation": "descriptive overlapping run, not independent validation",
+  "broker_time_basis": "broker_server_unknown_offset",
+  "historical_utc_offset_verified": false,
+  "runtime": {
+    "python": "3.12.14",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5"
+  },
+  "source_sha256": {
+    "run_research.py": "72572b1311ee55a9fc88927916bf671ecd838edbc29dd733539f7ceb11171ef3",
+    "requirements.txt": "56b45a20ef018ef23f50dd873faf5f1b27c22206092af1d6b2743d0441db16ac",
+    "SIGNALS.md": "dea1628961a987a963cea641d6a77fb6741b2a049baafcdfa6247766d2ed02fb",
+    "vortex_xau/audit.py": "c35a7d43deb26536f66cf165d83fca9e663df10d563580643c5a89f8b4ecaa06",
+    "vortex_xau/signals.py": "494430aec5c04d69e28b1bd714f2dc8dc5280e0732abff75bd71b5dc4b273cbe",
+    "vortex_xau/simulator.py": "14745b70d5ac0afa715a2d8b1a03c13e467aea8180c773374242eeb28394068a"
+  },
+  "raw_csv_sha256": {
+    "XAUUSD_H1.csv": "1f36cf1067f12f0e0ff62557e2c281892c8ec26b932a492a65ca4489771b7f7e",
+    "XAUUSD_M15.csv": "dff80ed60ba831cf60203aadcf8f4f2b8662f49517002cf1532bdf5128f56777",
+    "XAUUSD_M5.csv": "c739e3115b8d5e72c213a34fcf0b89ae7076a202fe3d2b7979e425d8fcf4cedf",
+    "manifest.csv": "233585533eef8b66d889130e696d388b4d9c5b0a9f4fafa5473d481e703b8ccc",
+    "metadata.csv": "95c9ddaf1f28d03aaba494421dedcc36a9b8200af4b2d893e59b7d9b790d409f",
+    "validation-summary.csv": "35ef9c75f78a472a821d1f640931b8901b19716fec6d3f9b6f638e7fb48f8db3"
+  },
+  "audit_review_findings": [],
+  "network_or_broker_operations": false,
+  "periods": {
+    "full": {
+      "start_inclusive_server": "2026-03-18T00:00:00",
+      "end_exclusive_server": "2026-09-15T00:00:00",
+      "first_bar_server": "2026-03-18T04:55:00",
+      "last_bar_server": "2026-09-14T04:45:00",
+      "rows": 34890,
+      "calendar_days": 181,
+      "starting_cash": 50.0,
+      "overlaps_other_partitions": true
+    },
+    "development": {
+      "start_inclusive_server": "2026-03-18T00:00:00",
+      "end_exclusive_server": "2026-07-04T00:00:00",
+      "first_bar_server": "2026-03-18T04:55:00",
+      "last_bar_server": "2026-07-03T16:55:00",
+      "rows": 21039,
+      "calendar_days": 108,
+      "starting_cash": 50.0,
+      "overlaps_other_partitions": false
+    },
+    "validation": {
+      "start_inclusive_server": "2026-07-04T00:00:00",
+      "end_exclusive_server": "2026-08-09T00:00:00",
+      "first_bar_server": "2026-07-05T22:00:00",
+      "last_bar_server": "2026-08-07T20:55:00",
+      "rows": 6900,
+      "calendar_days": 36,
+      "starting_cash": 50.0,
+      "overlaps_other_partitions": false
+    },
+    "holdout": {
+      "start_inclusive_server": "2026-08-09T00:00:00",
+      "end_exclusive_server": "2026-09-15T00:00:00",
+      "first_bar_server": "2026-08-09T22:00:00",
+      "last_bar_server": "2026-09-14T04:45:00",
+      "rows": 6951,
+      "calendar_days": 37,
+      "starting_cash": 50.0,
+      "overlaps_other_partitions": false
+    }
+  },
+  "signal_rows": 34890,
+  "ready_rows": 32490,
+  "context_age_diagnostics": {
+    "definition": "decision_time minus selected closed HTF close; diagnostic only, no age gate",
+    "session_candidates_definition": "ready and nonzero signal with decision hour 08:00 <= hour < 18:00 in broker clock; not guaranteed entries",
+    "interpretation": "Older contexts may reflect closures or absent history; not automatically invalid data.",
+    "timeframes": {
+      "M15": {
+        "threshold_minutes": 15,
+        "subsets": {
+          "all_rows": {
+            "rows": 34890,
+            "context_available": 34887,
+            "context_missing": 3,
+            "age_at_least_threshold": 252,
+            "negative_age": 0,
+            "max_age_minutes": 4390.0
+          },
+          "ready": {
+            "rows": 32490,
+            "context_available": 32490,
+            "context_missing": 0,
+            "age_at_least_threshold": 236,
+            "negative_age": 0,
+            "max_age_minutes": 4390.0
+          },
+          "nonzero_signal": {
+            "rows": 2921,
+            "context_available": 2921,
+            "context_missing": 0,
+            "age_at_least_threshold": 20,
+            "negative_age": 0,
+            "max_age_minutes": 3190.0
+          },
+          "session_candidates": {
+            "rows": 1201,
+            "context_available": 1201,
+            "context_missing": 0,
+            "age_at_least_threshold": 0,
+            "negative_age": 0,
+            "max_age_minutes": 10.0
+          }
+        }
+      },
+      "H1": {
+        "threshold_minutes": 60,
+        "subsets": {
+          "all_rows": {
+            "rows": 34890,
+            "context_available": 34878,
+            "context_missing": 12,
+            "age_at_least_threshold": 1392,
+            "negative_age": 0,
+            "max_age_minutes": 4435.0
+          },
+          "ready": {
+            "rows": 32490,
+            "context_available": 32490,
+            "context_missing": 0,
+            "age_at_least_threshold": 1304,
+            "negative_age": 0,
+            "max_age_minutes": 4435.0
+          },
+          "nonzero_signal": {
+            "rows": 2921,
+            "context_available": 2921,
+            "context_missing": 0,
+            "age_at_least_threshold": 117,
+            "negative_age": 0,
+            "max_age_minutes": 3235.0
+          },
+          "session_candidates": {
+            "rows": 1201,
+            "context_available": 1201,
+            "context_missing": 0,
+            "age_at_least_threshold": 0,
+            "negative_age": 0,
+            "max_age_minutes": 55.0
+          }
+        }
+      }
+    }
+  },
+  "signal_counts": {
+    "0": 31969,
+    "-1": 1710,
+    "1": 1211
+  },
+  "completed_at_utc": "2026-09-14T05:31:57.770752+00:00",
+  "completed_scenario_count": 32
+}
