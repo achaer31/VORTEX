@@ -19,5 +19,8 @@ Ini catatan retrospektif pekerjaan lokal sebelum repo dibuat. Riwayat commit dim
 - Sumber, pengujian, instruksi penggunaan, hash eksperimen, dan ringkasan hasil dipaketkan dalam repo.
 - Dataset penuh serta jurnal besar disimpan lokal. Cuplikan dashboard diterbitkan secara eksplisit tanpa detail akses VPS atau akun.
 - Versi dependensi awal dicatat terpisah agar file historis yang diberi hash tetap utuh.
+- Dashboard responsif diterbitkan di Vercel dengan candle historis M5/M15/H1, enam skor, pilihan 32 skenario, equity, event, dan diagnosis lot minimum.
+- Angka seluruh 32 kombinasi kontrol cocok saat diuji di browser. Layout 390 piksel tidak overflow. Detail modul, diagnosis, tabel, timeframe, dan pemeriksaan candle menggunakan keyboard berhasil.
+- GitHub Actions untuk riset dan pencocokan snapshot/sintaks dashboard berhasil. File yang disajikan Vercel cocok byte-per-byte dengan sumber yang diperiksa.
 
 Perubahan berikutnya dicatat melalui commit dengan alasan dan validasinya. Perubahan aturan strategi harus memakai versi eksperimen dan folder hasil baru.
