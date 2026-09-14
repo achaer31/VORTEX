@@ -46,11 +46,18 @@ class FakeMT5:
     def __init__(self):
         self.now = NOW; self.mode = 0; self.account_reads = 0; self.switch_after_first = False
         self.calls = []; self.truncated = False
+        self.balance = 50.; self.deals = []; self.lifecycle = []
     def account_info(self):
         self.account_reads += 1
         mode = 2 if self.switch_after_first and self.account_reads > 1 else self.mode
         return SimpleNamespace(trade_mode=mode, login=123456, currency="USD", margin_mode=2,
-                               balance=50., equity=50., margin_free=50., margin=0., profit=0.)
+                               balance=self.balance, equity=self.balance, margin_free=self.balance, margin=0., profit=0., credit=0.)
+    def initialize(self, *args, **kwargs):
+        self.lifecycle.append("initialize"); return True
+    def shutdown(self):
+        self.lifecycle.append("shutdown")
+    def history_deals_get(self, start, end):
+        return self.deals
     def terminal_info(self):
         return SimpleNamespace(connected=True, trade_allowed=False, tradeapi_disabled=True)
     def symbol_info_tick(self, symbol):

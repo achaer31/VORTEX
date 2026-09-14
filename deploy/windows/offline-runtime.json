@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "pythonVersion": "3.13.15",
+  "platform": "win_amd64",
+  "abi": "cp313",
+  "files": [
+    {
+      "file": "python-installer.exe",
+      "sha256": "edec09c4853aeae9ac36efb8c9f95b6b8e2fee65eee56d9767a8b7c69c574403",
+      "url": "https://www.python.org/ftp/python/3.13.15/python-3.13.15-amd64.exe"
+    },
+    {
+      "file": "wheels/metatrader5-5.0.6180-cp313-cp313-win_amd64.whl",
+      "name": "metatrader5",
+      "version": "5.0.6180",
+      "sha256": "41a89f9c87ab690f7c404ca0dd1bbdfd41630fff3860d4145ed464547860fb97",
+      "url": "https://files.pythonhosted.org/packages/00/cb/edc9bd6efff880c65b63ceffaa971f0cf70b8e4ec781eafd4fdee6c3c26c/metatrader5-5.0.6180-cp313-cp313-win_amd64.whl"
+    },
+    {
+      "file": "wheels/numpy-2.3.5-cp313-cp313-win_amd64.whl",
+      "name": "numpy",
+      "version": "2.3.5",
+      "sha256": "00dc4e846108a382c5869e77c6ed514394bdeb3403461d25a829711041217d5b",
+      "url": "https://files.pythonhosted.org/packages/0c/88/e2eaa6cffb115b85ed7c7c87775cb8bcf0816816bc98ca8dbfa2ee33fe6e/numpy-2.3.5-cp313-cp313-win_amd64.whl"
+    },
+    {
+      "file": "wheels/pandas-2.2.3-cp313-cp313-win_amd64.whl",
+      "name": "pandas",
+      "version": "2.2.3",
+      "sha256": "61c5ad4043f791b61dd4752191d9f07f0ae412515d59ba8f005832a532f8736d",
+      "url": "https://files.pythonhosted.org/packages/3b/bc/4b18e2b8c002572c5a441a64826252ce5da2aa738855747247a971988043/pandas-2.2.3-cp313-cp313-win_amd64.whl"
+    },
+    {
+      "file": "wheels/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "name": "python_dateutil",
+      "version": "2.9.0.post0",
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+      "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl"
+    },
+    {
+      "file": "wheels/pytz-2026.3.post1-py2.py3-none-any.whl",
+      "name": "pytz",
+      "version": "2026.3.post1",
+      "sha256": "dd95840dd199baea12d9cc096a1d452caa6596a1c1e4b5f3dbd1541855d5e815",
+      "url": "https://files.pythonhosted.org/packages/0f/7b/39c34ca613b0b198cb866466651b26b045e2009864c5183c979a3b83f383/pytz-2026.3.post1-py2.py3-none-any.whl"
+    },
+    {
+      "file": "wheels/six-1.17.0-py2.py3-none-any.whl",
+      "name": "six",
+      "version": "1.17.0",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl"
+    },
+    {
+      "file": "wheels/tzdata-2026.4-py2.py3-none-any.whl",
+      "name": "tzdata",
+      "version": "2026.4",
+      "sha256": "c2169a8b0a7a5e9674da5a135ccdfb2b3e671b333ed9fed17b41f73c34476e81",
+      "url": "https://files.pythonhosted.org/packages/f9/bc/8737e8d54cf51106118039b83f485a4783112fab49ea9d044b234978a46e/tzdata-2026.4-py2.py3-none-any.whl"
+    }
+  ]
+}

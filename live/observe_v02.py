@@ -22,7 +22,9 @@ import uuid
 import pandas as pd
 
 REPO = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / "research_v02"))
+from live.collect_evidence import (CollectionError, archive_frames, archive_account_snapshot, collect_accounting)
 from vortex_v02.data import aggregate_h4, external_context, validate_bars
 from vortex_v02.engines import build_signals
 
@@ -325,11 +327,13 @@ def empty_v02():
 
 
 class Observer:
-    def __init__(self, api, config, state, clock=time.time, executor=None, calculator=calculate_row):
+    def __init__(self, api, config, state, clock=time.time, executor=None, calculator=calculate_row, collection_mode=False):
         self.api, self.config, self.state, self.clock = api, config, state, clock
         self.session = str(uuid.uuid4()); self.started = utc_iso(clock()); self.sequence = 0
         self.executor = executor or ThreadPoolExecutor(max_workers=1, thread_name_prefix="vortex-readonly-features")
         self.calculator = calculator; self.future = None; self.row = None; self.requested_bar = None
+        self.collection_mode = bool(collection_mode)
+        self.role = "collector" if self.collection_mode else "observer"
 
     def snapshot(self):
         now = self.clock(); self.sequence += 1
@@ -337,14 +341,14 @@ class Observer:
                    "sessionStartedAt": self.started, "sequence": self.sequence, "producedAt": utc_iso(now),
                    "quote": None, "status": {"terminalConnected": False, "algoTradingEnabled": False, "eaRunning": False, "demoVerified": False},
                    "account": None, "positions": [],
-                   "strategy": {"name": "VORTEX", "version": "0.2.0", "state": "observer_running", "reason": "observe_no_execution", "runnerMode": "observe"},
+                   "strategy": {"name": "VORTEX", "version": "0.2.0", "state": self.role + "_running", "reason": "observe_no_execution", "runnerMode": "observe"},
                    "v02": empty_v02()}
         try:
             account, terminal = verified_account(self.api, self.config)
         except ObserverStop as error:
-            payload["strategy"]["state"] = "observer_blocked"
+            payload["strategy"]["state"] = self.role + "_blocked"
             payload["strategy"]["reason"] = str(error)
-            self.state.event(now, "observer_blocked", str(error))
+            self.state.event(now, self.role + "_blocked", str(error))
             payload["v02"]["journal"] = self.state.data["journal"]
             return self._save(payload)
         payload["status"] = {"terminalConnected": True, "algoTradingEnabled": bool(getattr(terminal, "trade_allowed", False) and not getattr(terminal, "tradeapi_disabled", True)),
@@ -379,8 +383,11 @@ class Observer:
             self.requested_bar = bar
             try:
                 frames = collect_frames(self.api, self.state, now)
+                if self.collection_mode:
+                    verified_account(self.api, self.config)
+                    archive_frames(self.state.directory, frames)
                 self.future = self.executor.submit(self.calculator, frames, self.config)
-            except ObserverStop as error:
+            except (ObserverStop, CollectionError) as error:
                 self.row = None; reason = str(error)
         v02 = payload["v02"]; protection = v02["protection"]
         protection["brokerConnected"] = True
@@ -430,8 +437,19 @@ class Observer:
             payload["status"]["demoVerified"] = False; payload["status"]["terminalConnected"] = False
             payload["v02"] = empty_v02(); reason = str(error)
         payload["strategy"]["reason"] = reason
-        self.state.event(now, "observer_status", reason)
+        self.state.event(now, self.role + "_status", reason)
         payload["v02"]["journal"] = self.state.data["journal"]
+        if self.collection_mode and payload["status"]["demoVerified"]:
+            collect_accounting(self.api, self.state.directory, account, now)
+            try:
+                verified_account(self.api, self.config)
+            except ObserverStop as error:
+                payload["account"] = None; payload["quote"] = None; payload["positions"] = []
+                payload["status"]["demoVerified"] = False; payload["status"]["terminalConnected"] = False
+                payload["strategy"]["state"] = self.role + "_blocked"
+                payload["strategy"]["reason"] = str(error)
+                payload["v02"] = empty_v02()
+                payload["v02"]["journal"] = self.state.data["journal"]
         return self._save(payload)
 
     def _journal_decision(self, row, result, now):
@@ -441,10 +459,12 @@ class Observer:
             "reasons": {name: safe_text(row.get(f"{name}_reason", "unavailable")) for name in NAMES},
             "consensus": number(row.get("consensus")), "chosenMode": str(row.get("mode", "FROZEN")),
             "chosenAction": {1: "LONG", -1: "SHORT", 0: "WAIT"}.get(int(row.get("signal", 0)), "WAIT"),
-            "executionEnabled": False, "meaning": "unexecuted_model_observation"})
+            "executionEnabled": False, "collectionOnly": self.collection_mode, "meaning": "unexecuted_model_observation"})
 
     def _save(self, payload):
         atomic_json(self.state.directory / "status.json", payload)
+        if self.collection_mode:
+            archive_account_snapshot(self.state.directory, payload)
         return payload
 
     def close(self):
@@ -456,19 +476,20 @@ def main(argv=None, env=None):
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--check", action="store_true", help="offline config/import validation; default")
     group.add_argument("--observe", action="store_true", help="explicit reviewed-baseline-gated read-only terminal collection")
-    parser.add_argument("--once", action="store_true", help="one heartbeat in observe mode")
+    group.add_argument("--collect", action="store_true", help="explicit read-only DEMO evidence collection; does not assert a passed baseline")
+    parser.add_argument("--once", action="store_true", help="one heartbeat in collect or observe mode")
     args = parser.parse_args(argv); env = os.environ if env is None else env
     try:
         config = ObserverConfig.from_env(env)
-        if not args.observe:
+        if not args.observe and not args.collect:
             print("v0.2 observer imports/configuration valid; terminal untouched; baseline not asserted.")
             return 0
-        if env.get("VORTEX_BASELINE_STATUS") != "passed_reviewed":
+        if args.observe and env.get("VORTEX_BASELINE_STATUS") != "passed_reviewed":
             raise ObserverStop("reviewed_baseline_required")
         if sys.platform != "win32":
             raise ObserverStop("windows_terminal_required")
         import MetaTrader5 as mt5
-        state = ObserverState(config, time.time()); observer = Observer(mt5, config, state)
+        state = ObserverState(config, time.time()); observer = Observer(mt5, config, state, clock=time.time, collection_mode=args.collect)
         try:
             path = env.get("VORTEX_TERMINAL_PATH")
             connected = mt5.initialize(path, timeout=10000) if path else mt5.initialize(timeout=10000)
