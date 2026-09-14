@@ -26,7 +26,7 @@ sumber terhubung. REAL tetap terkunci. Tidak ada data akun, identifier akses,
 password, reader token, atau kode eksekusi dalam unggahan hosting.
 
 **Status strategi: NO-GO / NOT_EVALUABLE. Status otonomi: NOT_TESTED / NOT_READY.**
-Observer, broker execution v0.2, database jarak jauh, watchdog dan Telegram
+Observer Python, broker execution v0.2, database jarak jauh, watchdog dan Telegram
 belum diaktifkan. Adapter DEMO dan supervisor v0.2 kini tersedia sebagai kode
 yang default-nya offline; integrasi aktual masih harus diuji pada broker demo.
 Tugas Windows yang disiapkan
@@ -116,6 +116,36 @@ Collector native adalah script di terminal yang sedang hidup. Auto-start setelah
 reboot/crash, pemulihan posisi/proteksi, penghentian MacBook/Astra, pengiriman
 alert dan enam engine belum diuji sebagai satu runtime. **AUTONOMOUS READY tetap
 belum tercapai; supervisor eksekusi belum diaktifkan dan tidak ada order dikirim.**
+
+## Port enam engine native — parity aktual 14 September 2026
+
+[Kernel native dan harness offline](../native_mt5/README.md) memakai input CSV
+sintetis yang disiapkan dari Python v0.2 yang dibekukan. Harness dikompilasi pada
+MetaEditor VPS dengan **0 error/0 warning**, lalu hasil eksekusi MQL5 dibandingkan
+secara terpisah terhadap oracle Python: **PARITY_PASS**, 9 skenario, 8.685 baris
+sinyal dan 22 kasus voting mode. Manifest, jumlah/urutan baris, nilai hilang,
+flag dan alasan cocok; angka memakai toleransi absolut `1e-7` dan relatif `1e-10`.
+[Ringkasan parity beserta hash](../native_mt5/validation-native-parity-2026-09-14.json)
+telah disanitasi; bukti compiler dan proses terminal dicatat terpisah.
+Sebanyak **29 tes native lokal** lulus: 11 kontrak harness, 6 kontrak observer dan
+12 tes fixture/comparator, terpisah dari bukti compile dan hasil native tersebut.
+
+Wrapper `VortexNativeObserve.mq5` dikompilasi **0 error/0 warning** dalam 2.924 ms.
+Input observasi dan identitas DEMO diisi, lalu Start dikirim melalui MT5 dengan
+Allow Algo Trading tetap tidak dicentang. Mac terkunci sebelum jurnal VPS dapat
+dibaca; pembukaan otomatis gagal. **Status proses dan jurnal observer belum
+diverifikasi; belum dapat diklaim berjalan.** [Catatan target beserta hash](../native_mt5/validation-target-2026-09-14.json)
+mencatat percobaan mulai dan hambatan pemeriksaan. Wrapper ini baca-saja;
+adapter risiko/eksekusi native belum diimplementasikan.
+Kalender/coverage, DXY, US10y dan session/DST runtime belum terhubung, sehingga
+ATLAS serta gate input wajib tetap menghasilkan **FROZEN/WAIT**. Tidak ada order
+atau perubahan izin Algo Trading dalam paket native ini.
+
+Kesetaraan numerik berlaku pada array fixture yang sama. Observer mengambil
+riwayat terbatas dan memulai ulang seed indikator; itu belum membuktikan
+kesetaraan terhadap seluruh riwayat backtest atau menyediakan replay lengkap
+setiap keputusan. Port ini tidak mengubah aturan, hash atau 100 hasil riset
+historis. **NO-GO / NOT_EVALUABLE dan NOT_READY tetap berlaku.**
 
 ## Deployment pertama
 

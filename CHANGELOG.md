@@ -1,5 +1,21 @@
 # Riwayat perubahan
 
+## 2026-09-14 — parity enam engine native MT5
+
+- Port perhitungan indikator, enam skor, konsensus dan mode v0.2 ke kernel MQL5
+  murni; harness default nonaktif membaca fixture sintetis tanpa akses broker.
+- Harness dikompilasi di VPS Exness dengan 0 error/0 warning. Hasil MQL5 aktual
+  lulus comparator Python: 9 skenario, 8.685 baris sinyal dan 22 kasus mode;
+  [ringkasan beserta hash](native_mt5/validation-native-parity-2026-09-14.json)
+  disimpan tanpa data akun atau lokasi privat.
+- Wrapper observer DEMO baca-saja dikompilasi 0 error/0 warning. Start dicoba
+  dengan Allow Algo Trading tidak dicentang, tetapi Mac terkunci sebelum jurnal
+  diperiksa; [operasi runtime belum terverifikasi](native_mt5/validation-target-2026-09-14.json).
+  Total 29 tes native lokal lulus: 11 harness, 6 observer dan 12 fixture/comparator.
+- Input wajib kalender/macro/session belum terhubung; ATLAS tetap tidak valid
+  dan kontrak observer mewajibkan FROZEN/WAIT. Adapter risiko/eksekusi native belum tersedia.
+  Parity bukan profit atau GO; sumber dan hasil riset historis tetap utuh.
+
 ## 2026-09-14 — bukti native MT5 pada VPS Exness
 
 - Collector native mulai merekam heartbeat, quote/spread, metrik akun aktual,

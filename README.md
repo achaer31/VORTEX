@@ -19,6 +19,14 @@ sebagai kode terpisah, default offline, dan seluruh gate masih terkunci. Instala
 pada VPS Exness ditolak kebijakan Windows (1625), sehingga kelulusan tes kode
 belum berarti engine trading berjalan. [Status dan blocker aktual](docs/DEPLOYMENT.md).
 
+[Port enam engine native MT5](native_mt5/README.md) sudah lulus perbandingan
+aktual dengan Python: **9 skenario sintetis, 8.685 baris sinyal, 22 kasus mode**.
+Harness dan wrapper observer dikompilasi tanpa error/warning; 29 tes native lokal
+lulus. Observer sudah dicoba dimulai, tetapi Mac terkunci sebelum jurnalnya bisa
+diperiksa: **belum terbukti berjalan**. [Catatan target](native_mt5/validation-target-2026-09-14.json)
+merekam batas bukti ini. Adapter risiko/eksekusi native belum tersedia dan input
+wajib ATLAS masih tidak lengkap. Hasil ini tidak mengubah **NO-GO**.
+
 **[Buka dashboard VORTEX](https://vortex-xau.vercel.app)** · [catatan deployment](docs/DEPLOYMENT.md)
 
 **Status v0.1: 32 skenario, saldo simulasi awal $50, saldo akhir $50, 0 transaksi.** Seluruh 1.201 kandidat periode penuh ditolak karena kebutuhan risiko pada lot minimum melampaui budget. Ini belum membuktikan strategi menghasilkan profit. Akun demo MT5 dan saldo simulasi adalah dua hal terpisah.
@@ -39,6 +47,7 @@ belum berarti engine trading berjalan. [Status dan blocker aktual](docs/DEPLOYME
 | `reports/v0.2/` |100 skenario beku, audit, diagnosa, hash dan NO-GO |
 | `live/` | Collector, adapter dan supervisor DEMO default offline, private publisher, optional Telegram |
 | `data_collection/` | Collector native MT5, bukti akun privat, kalender dan validator input prospective |
+| `native_mt5/` | Port enam engine, parity sintetis yang telah dibandingkan, observer DEMO baca-saja |
 | `cloud/` | Database, API privat dan template Docker; belum diprovision |
 | `deploy/` | Paket Windows dan evidence gate autonomy; belum diterapkan |
 | `dashboard/` | Tampilan web dan cuplikan historis yang disiapkan untuk publikasi |
