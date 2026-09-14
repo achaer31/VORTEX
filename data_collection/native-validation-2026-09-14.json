@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-14",
+  "scope": "limited_native_mt5_capture_validation",
+  "financialDataPublished": false,
+  "source": {
+    "data_collection/VortexEvidenceCollector.mq5": "105280eb544583ff68682071fdd212db107e9cd6a7970a880dfa36a75649cda5",
+    "data_collection/VortexAccountEvidence.mq5": "3d2d77a30d9a4189c9d9f9796049892a025138d0ac9e3a59597e29a7fa955581"
+  },
+  "compiler": {
+    "VortexEvidenceCollector": {
+      "errors": 0,
+      "warnings": 0,
+      "elapsedMs": 1323,
+      "target": "X64 Regular",
+      "logSha256": "3da09b36a3e84280c056901b05a650ae3506e957ca307eef946b7263399e2cb0"
+    },
+    "VortexAccountEvidence": {
+      "errors": 0,
+      "warnings": 0,
+      "elapsedMs": 1627,
+      "target": "X64 Regular",
+      "logSha256": "cb5acfa35cf4f31df7b91e71dc1bffc9d6b3452978897a426437cd35060e8cda"
+    }
+  },
+  "accountCapture": {
+    "status": "VALID_CAPTURE",
+    "privateReconciliationPerformed": true,
+    "independentHistoryCompleteness": "NOT_PROVEN",
+    "atomicBrokerSnapshot": false,
+    "accountFinancialValuesAndIdentifiers": "PRIVATE_NOT_PUBLISHED"
+  },
+  "collectorObservation": {
+    "status": "COLLECTING_ONLY",
+    "firstHostTimeLabel": "2026-09-14T08:42:59",
+    "lastHostTimeLabel": "2026-09-14T08:46:01",
+    "clockAccuracy": "host_UTC_unverified",
+    "sourceTimeBasis": "broker_server_offset_unverified",
+    "firstCopyHeartbeatRows": 10,
+    "secondCopyHeartbeatRows": 37,
+    "allFirstCopyBytesPreserved": true,
+    "heartbeatStates": [
+      "COLLECTING_ONLY"
+    ],
+    "action": "WAIT",
+    "actionMeaning": "collector status only, not six-engine consensus",
+    "executionEnabled": false,
+    "closedBarRows": {
+      "M5": 1,
+      "M15": 1,
+      "H1": 0
+    },
+    "symbolSpecCompletedAttempts": 1,
+    "commissionStatus": "UNKNOWN",
+    "privateFileDigests": {
+      "heartbeat.csv": {
+        "rows": 37,
+        "sha256": "3e8d300b4520dfa1d3f2d52971a0d54f7eec0184e2cd1fd969c6c81ec5e088f6",
+        "original_prefix_preserved": true,
+        "first_time": "2026-09-14T08:42:59",
+        "last_time": "2026-09-14T08:46:01",
+        "status_counts": {
+          "COLLECTING_ONLY": 37
+        },
+        "last_sequence": "37"
+      },
+      "symbol-spec.csv": {
+        "rows": 22,
+        "sha256": "beafe2257660ecc70f00c8ade37b025e1004f1f6605dc03c53173279831a4bc2",
+        "original_prefix_preserved": true
+      },
+      "XAUUSD_M5.csv": {
+        "rows": 1,
+        "sha256": "ba37fb4375c01948f0649393904dad3fcf062632da11ac2875c3cfdaa6fd38f6",
+        "original_prefix_preserved": true,
+        "bar_times": [
+          "2026-09-14T08:40:00"
+        ]
+      },
+      "XAUUSD_M15.csv": {
+        "rows": 1,
+        "sha256": "3cf11c5107cbf48482e6c1e29e8802cf120f8054919915c1aa48b07658bdd91d",
+        "original_prefix_preserved": true,
+        "bar_times": [
+          "2026-09-14T08:30:00"
+        ]
+      },
+      "XAUUSD_H1.csv": {
+        "rows": 0,
+        "sha256": "593198b38af781ebfe3bc854f443ec0d289b4f376426265151a9f1dc7fb1a846",
+        "original_prefix_preserved": true,
+        "bar_times": []
+      }
+    }
+  },
+  "checks": {
+    "dataCollectionUnitAndContractTests": 34,
+    "nativeSourceContractTests": 18,
+    "targetRuntimeCompilerVerified": true,
+    "boundedCaptureValidationVerified": true,
+    "staleDisconnectStopAndDiskFailureRuntimeTests": "NOT_TESTED",
+    "macOffAndChatClosedAcceptance": "NOT_TESTED",
+    "unattendedRebootAndCrashRecovery": "NOT_TESTED"
+  },
+  "gates": {
+    "baselineGo": false,
+    "costsApproved": false,
+    "capitalHistoryApprovedForExecution": false,
+    "sixEngineRuntimeActive": false,
+    "demoExecutionActive": false,
+    "realExecutionActive": false,
+    "autonomousReady": false
+  },
+  "limitations": [
+    "Native collector is a script in the running terminal, not a reboot-managed service.",
+    "H1 delivery has not yet been observed in these copies.",
+    "Data files copied during collection are not an atomic multi-file snapshot.",
+    "No execution, position management or strategy decisions are exercised by this collector.",
+    "Current financial snapshots and historical cost values do not approve future execution costs.",
+    "Mandatory calendar coverage and DXY/US10y feeds remain unavailable or unapproved.",
+    "Python installation is blocked by Windows policy 1625; no policy changes were attempted."
+  ]
+}
