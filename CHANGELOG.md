@@ -1,5 +1,19 @@
 # Riwayat perubahan
 
+## 2026-09-14 — bukti native MT5 pada VPS Exness
+
+- Collector native mulai merekam heartbeat, quote/spread, metrik akun aktual,
+  candle tertutup dan spesifikasi simbol secara privat tanpa Python atau order.
+- Exporter akun sekali jalan mempertahankan deal/cost/cashflow yang dilaporkan
+  broker. Funding/reset dipisahkan dari laba, arsip riset lama tetap utuh.
+- Pemeriksaan identitas sebelum penulisan, redaksi saat INVALID, lock eksklusif,
+  penulisan UTF-8 utuh dan marker capture parsial diperiksa secara independen.
+- Kedua script dikompilasi di Exness tanpa error/warning; capture akun dan dua
+  salinan collector diperiksa.34 tes pengumpulan data lulus,18 di antaranya
+  merupakan tes kontrak sumber native.
+- Pengumpulan bukti berjalan; enam engine/eksekusi, cloud/Telegram, pemulihan
+  restart dan acceptance Mac-off belum aktif/lulus. NO-GO/NOT_READY tetap berlaku.
+
 ## 2026-09-14 — collector, adapter DEMO dan persiapan migrasi
 
 - Ditambahkan mode collector DEMO eksplisit sebelum GO: candle tertutup,

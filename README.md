@@ -13,6 +13,12 @@ Modal tetap$50, top-up0; [September challenge](challenge/README.md) belum aktif.
 Software runtime tidak memerlukan Astra/LLM. VPS/auto-start/rekonsiliasi/Mac-off
 acceptance belum dijalankan, sehingga status **bukan AUTONOMOUS READY**.
 
+Collector native baca-saja sudah merekam heartbeat dan candle tertutup di MT5
+Exness. Ia bukan enam engine atau eksekusi trading. Supervisor DEMO tersedia
+sebagai kode terpisah, default offline, dan seluruh gate masih terkunci. Instalasi Python
+pada VPS Exness ditolak kebijakan Windows (1625), sehingga kelulusan tes kode
+belum berarti engine trading berjalan. [Status dan blocker aktual](docs/DEPLOYMENT.md).
+
 **[Buka dashboard VORTEX](https://vortex-xau.vercel.app)** · [catatan deployment](docs/DEPLOYMENT.md)
 
 **Status v0.1: 32 skenario, saldo simulasi awal $50, saldo akhir $50, 0 transaksi.** Seluruh 1.201 kandidat periode penuh ditolak karena kebutuhan risiko pada lot minimum melampaui budget. Ini belum membuktikan strategi menghasilkan profit. Akun demo MT5 dan saldo simulasi adalah dua hal terpisah.
@@ -31,7 +37,8 @@ acceptance belum dijalankan, sehingga status **bukan AUTONOMOUS READY**.
 | `research_v02/` | Model baru modular, adaptive exits, risk gate, walk-forward,73 tes |
 | `reports/v0.1/` | Laporan, parameter, hash, audit, dan ringkasan 32 skenario |
 | `reports/v0.2/` |100 skenario beku, audit, diagnosa, hash dan NO-GO |
-| `live/` | Observer v0.2, demo safeguards, private publisher, optional Telegram |
+| `live/` | Collector, adapter dan supervisor DEMO default offline, private publisher, optional Telegram |
+| `data_collection/` | Collector native MT5, bukti akun privat, kalender dan validator input prospective |
 | `cloud/` | Database, API privat dan template Docker; belum diprovision |
 | `deploy/` | Paket Windows dan evidence gate autonomy; belum diterapkan |
 | `dashboard/` | Tampilan web dan cuplikan historis yang disiapkan untuk publikasi |

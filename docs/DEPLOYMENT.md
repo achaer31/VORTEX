@@ -1,4 +1,4 @@
-# Deployment v0.2 — dashboard terbit, runtime belum aktif
+# Deployment v0.2 — dashboard terbit, collector native berjalan
 
 - Konsol: **https://vortex-xau.vercel.app/v02.html**.
 - Tanggal: 14 September 2026.
@@ -48,7 +48,7 @@ belum tersambung; commit GitHub berikutnya tidak otomatis menerbitkan halaman.
 - Installer Python resmi telah disalin, SHA-256 dicocokkan dan tanda tangan
   Python Software Foundation diterima. Instalasi ditolak dengan **1625**:
   kebijakan sistem melarang pemasangan. Python/venv/dependensi belum terpasang;
-  collector, supervisor dan scheduled task belum berjalan. Tidak ada perubahan
+  collector Python, supervisor dan scheduled task belum berjalan. Tidak ada perubahan
   kebijakan keamanan atau percobaan menghindari pembatasan tersebut.
 - Paket offline membawa installer dan wheel Windows dengan hash serta versi
   tetap. Empat script PowerShell diperiksa parser pada Windows PowerShell
@@ -77,6 +77,45 @@ Telegram; serta uji broker DEMO, crash/reboot, rekonsiliasi dan MacBook terputus
 Kode dan tes lokal yang lolos tidak mengubah **NOT_READY** menjadi AUTONOMOUS READY.
 Lihat [langkah Windows](../deploy/windows/README.md). Arsitektur riset dan seluruh
 100 hasil eksperimen yang dibekukan tidak diubah.
+
+## Collector native Exness — pengujian aktual 14 September 2026
+
+Pencarian/pembelian VPS baru dihentikan sesuai arahan pengguna; tidak ada instance
+Vultr yang dibuat atau biaya pembelian yang dikomit. Pengumpulan bukti dilanjutkan
+pada MT5 Exness yang sudah tersedia melalui fitur script native, tanpa mengubah
+kebijakan instalasi Windows.
+
+- `VortexAccountEvidence.mq5` dikompilasi **0 error/0 warning** dan berhasil
+  mengambil satu capture akun DEMO yang stabil selama pemeriksaan. Arsip mentah
+  dan rekonsiliasi cashflow disimpan privat. Perubahan funding/reset dipisahkan
+  dari profit; kerugian manual dan arsip eksperimen lama tidak dihapus. Capture
+  valid tidak berarti modal, biaya, kelengkapan order, atau strategi disetujui.
+- `VortexEvidenceCollector.mq5` versi yang ditinjau dua kali dikompilasi
+  **0 error/0 warning**, lalu dijalankan di MT5 dengan Algo Trading **OFF**.
+  Dua salinan privat menunjukkan 10 lalu 37 heartbeat berurutan, mempertahankan
+  byte salinan pertama. Salinan kedua mencakup satu candle M5 dan satu M15
+  tertutup; H1 masih menunggu penutupan berikutnya. Waktu host tercatat
+  08:42:59–08:46:01 dan tetap dilabeli belum diverifikasi dalam data mentah.
+- Semua heartbeat tersebut `COLLECTING_ONLY / WAIT`, `execution_enabled=false`.
+  `WAIT` adalah status pencatat, bukan hasil konsensus enam engine. Data hanya
+  disimpan pada VPS; belum dipublikasikan sebagai feed dashboard atau Telegram.
+- Snapshot spesifikasi memiliki marker STARTED/COMPLETE, sementara komisi tetap
+  UNKNOWN. Nilai biaya deal historis yang kebetulan nol tidak menjadi asumsi biaya
+  masa depan. Kalender, DXY dan US10y tetap belum memenuhi gate input wajib.
+- 18 pemeriksaan kontrak sumber native ditambahkan, sehingga suite pengumpulan
+  data berisi 34 tes yang lulus. Tes tersebut statis/sintetis; hasil compile dan
+  capture aktual dicatat terpisah beserta hash.
+
+[Bukti publik yang telah disanitasi](../data_collection/native-validation-2026-09-14.json)
+tidak membawa saldo akun, deal ID, login, alamat VPS, screenshot, atau kredensial.
+Saldo DEMO aktual mengikuti perubahan pemilik; perubahan modal eksplorasi
+memerlukan segmen eksperimen prospektif terpisah, bukan penggantian hasil $50
+yang sudah dibekukan atau penghapusan kill-switch/riwayat rugi.
+
+Collector native adalah script di terminal yang sedang hidup. Auto-start setelah
+reboot/crash, pemulihan posisi/proteksi, penghentian MacBook/Astra, pengiriman
+alert dan enam engine belum diuji sebagai satu runtime. **AUTONOMOUS READY tetap
+belum tercapai; supervisor eksekusi belum diaktifkan dan tidak ada order dikirim.**
 
 ## Deployment pertama
 
