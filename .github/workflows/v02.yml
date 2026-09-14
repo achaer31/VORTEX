@@ -1,0 +1,42 @@
+name: VORTEX v0.2 safety and research
+on:
+  push:
+    paths: ['research_v02/**', 'live/**', 'cloud/**', 'deploy/**', 'reports/v0.2/**', 'scripts/verify_v02.py', 'dashboard/v02*', 'dashboard/assets/v02.json', 'dashboard/tools/test_v02.mjs', '.github/workflows/v02.yml']
+  pull_request:
+    paths: ['research_v02/**', 'live/**', 'cloud/**', 'deploy/**', 'reports/v0.2/**', 'scripts/verify_v02.py', 'dashboard/v02*', 'dashboard/assets/v02.json', 'dashboard/tools/test_v02.mjs', '.github/workflows/v02.yml']
+permissions:
+  contents: read
+jobs:
+  offline-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: research_v02/requirements.txt
+      - run: python -m pip install -r research_v02/requirements.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: python -m unittest discover -s tests -v
+        working-directory: research_v02
+      - run: python -m unittest discover -s live/tests -v
+      - run: python -m unittest discover -s deploy/autonomy/tests -v
+      - run: python scripts/verify_v02.py
+  telemetry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: cloud/package-lock.json
+      - run: npm ci
+        working-directory: cloud
+      - run: npm test
+        working-directory: cloud
+      - run: node --check dashboard/v02.js
+      - run: node --test dashboard/tools/test_v02.mjs

@@ -1,5 +1,11 @@
 # VORTEX / XAU dashboard
 
+`v02.html` adalah konsol EXTREME v0.2. Ia membaca `assets/v02.json` dari `research_v02/run_research.py` dan memilih skenario yang benar-benar tersedia, bukan menghitung ulang hasil di browser. Angka backtest tetap terpisah dari PAPER/DEMO.
+
+PAPER/DEMO awalnya DISCONNECTED. Panel koneksi opsional menerima endpoint HTTPS tanpa query/credential dan reader token 64 karakter hex yang hanya ditahan di memori. GET menggunakan header Authorization, polling 15 detik; quote lebih tua dari 10 detik atau snapshot lebih tua dari 90 detik ditampilkan non-live. Data tidak ditahan sebagai angka live saat request gagal. Snapshot legacy tidak dipresentasikan sebagai skor v0.2. Tombol REAL terkunci; tidak ada kontrol order atau aktivasi.
+
+Card September adalah target pengguna, bukan forecast atau izin trading. NO-GO tetap ditampilkan sampai penilaian terpisah; halaman tidak dapat mempromosikan dirinya sendiri.
+
 Dashboard statis tanpa build/dependensi frontend. `index.html`, `style.css`, `app.js`, dan `assets/` adalah berkas publik. Jalankan lewat HTTP; browser membatasi pembacaan JSON jika HTML dibuka langsung dengan `file://`.
 
 ```sh

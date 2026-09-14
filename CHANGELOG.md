@@ -1,5 +1,29 @@
 # Riwayat perubahan
 
+## 2026-09-14 — EXTREME v0.2 dan challenge, NO-GO
+
+- Audit v0.1 dipertahankan; model baru memakai H4, liquidity sweep, session/DST,
+  news/macro point-in-time, unsigned volatility quality dan independent risk gate.
+- Menjelang eksperimen, pengguna mengubah exit menjadi adaptif terhadap lot
+  executable dan menambahkan stress EXTREME10%. Amendment A1 dibekukan sebelum
+  run; SPEC sebelum amendment diarsipkan. Tidak ada tuning setelah hasil.
+- Simulator baru mencakup partial/single trailing, winner-only max2 adds,
+  financing, risk caps, daily/streak freeze, lot/tick constraints dan SL-first.
+-73 tes v0.2 lulus.100 profil/biaya/periode/walk-forward selesai: semua$50,
+  0trade karena input mandatory hilang; statistik performa belum evaluable.
+  Diagnosis minimum0.01lot mulai sekitar$6.17 vs budget$5 pada stress10%.
+- Ditambahkan observer Windows v0.2 baca-saja, private publisher, optional
+  Telegram dan journal hash chain;54 tes live lulus. Tidak ada proses diaktifkan.
+- Database/Edge API/Docker template terpisah dari runtime MT5; pengujian HTTP
+  dan SQL lokal. Token tidak masuk browser bundle/Git; infrastruktur belum dibuat.
+- Dashboard v0.2 memisahkan BACKTEST/PAPER/DEMO; REAL terkunci.100 kombinasi
+  terverifikasi di browser, layar390px tidak overflow;13 tes batas UI lulus.
+- September challenge$50→$50.000 dicatat sebagai target, top-up0, tanpa kenaikan
+  risiko karena tenggat. GO dan AUTONOMOUS READY tetap belum terpenuhi.
+- Runtime final tidak bergantung Astra/OpenAI/MacBook/dashboard/Telegram.
+  At-logon task belum membuktikan unattended reboot; acceptance Mac-off dan
+  rekonsiliasi/protection pada VPS belum dijalankan.
+
 ## 2026-09-14 — baseline riset XAUUSD
 
 Ini catatan retrospektif pekerjaan lokal sebelum repo dibuat. Riwayat commit dimulai saat paket diimpor; commit lama tidak direkonstruksi atau diberi tanggal palsu.

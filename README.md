@@ -1,6 +1,17 @@
 # VORTEX · XAUUSD Research
 
-Mesin riset historis dan dashboard untuk melihat data harga, enam skor strategi, hasil simulasi, dan alasan sistem melewati entry.
+Mesin riset historis, infrastruktur demo dan dashboard untuk memeriksa data,
+enam skor strategi, hasil simulasi, dan alasan sistem melewati entry.
+
+**v0.2: NO-GO.100 skenario, modal awal$50, equity akhir$50,0 trade.** Kalender
+berita/macro point-in-time belum tersedia; statistik strategi belum dapat
+dievaluasi. [Laporan v0.2](reports/v0.2/REPORT.md) · [Konsol v0.2](https://vortex-xau.vercel.app/v02.html)
+· [Kontrak runtime autonomous](docs/ARCHITECTURE-v02.md).
+
+Exit adaptif dan stress EXTREME7.5/10% diuji terpisah dari baseline2/3.5/5%.
+Modal tetap$50, top-up0; [September challenge](challenge/README.md) belum aktif.
+Software runtime tidak memerlukan Astra/LLM. VPS/auto-start/rekonsiliasi/Mac-off
+acceptance belum dijalankan, sehingga status **bukan AUTONOMOUS READY**.
 
 **[Buka dashboard VORTEX](https://vortex-xau.vercel.app)** · [catatan deployment](docs/DEPLOYMENT.md)
 
@@ -17,7 +28,12 @@ Mesin riset historis dan dashboard untuk melihat data harga, enam skor strategi,
 | --- | --- |
 | `exporter/` | Script MQL5 pengumpul harga dan validator PowerShell |
 | `research/` | Audit data, sinyal, simulator, runner, dan 37 unit test |
+| `research_v02/` | Model baru modular, adaptive exits, risk gate, walk-forward,73 tes |
 | `reports/v0.1/` | Laporan, parameter, hash, audit, dan ringkasan 32 skenario |
+| `reports/v0.2/` |100 skenario beku, audit, diagnosa, hash dan NO-GO |
+| `live/` | Observer v0.2, demo safeguards, private publisher, optional Telegram |
+| `cloud/` | Database, API privat dan template Docker; belum diprovision |
+| `deploy/` | Paket Windows dan evidence gate autonomy; belum diterapkan |
 | `dashboard/` | Tampilan web dan cuplikan historis yang disiapkan untuk publikasi |
 | `data/` | Petunjuk dataset lokal; CSV penuh tidak diunggah |
 | `docs/` | Arsitektur dan catatan validasi |
@@ -52,4 +68,8 @@ Deployment pertama diterbitkan dari file dashboard yang sudah diverifikasi. Inte
 
 Riwayat Git dimulai saat impor pekerjaan pada 14 September 2026. Pekerjaan sebelumnya dicatat secara retrospektif di CHANGELOG; tidak ada rekonstruksi commit lama. Model XAU v0.1 adalah hipotesis baru karena implementasi BTC sebelumnya tidak tersedia.
 
-Tidak ada koneksi broker atau pengiriman order dalam mesin Python/dashboard. Kredensial, identifier akun, screenshot pribadi, konfigurasi RDP, dan arsip mentah tidak masuk repo. Data OHLC dan spread proxy belum mereplikasi eksekusi tick broker; offset UTC/DST historis belum diverifikasi. Holdout v0.1 sudah digunakan dan tidak boleh dipakai memilih parameter lalu disebut data uji baru.
+Riset/dashboard tidak mengirim order. Adapter demo generik tersedia untuk tes
+sintetis; arming/entry legacy diblokir, v0.2 broker execution belum diaktifkan.
+Kredensial, identifier akun, screenshot pribadi, RDP dan arsip mentah tidak masuk
+repo. Data OHLC/spread proxy belum mereplikasi tick broker; historical costs
+belum terverifikasi. Holdout v0.1 sudah digunakan dan tidak boleh disebut unseen.
