@@ -1,0 +1,5 @@
+# Copy this section into the approved project's Supabase configuration.
+# The gateway must defer authentication to the two opaque-token checks in core.mjs.
+[functions.vortex-live]
+verify_jwt = false
+entrypoint = "./functions/vortex-live/index.mjs"

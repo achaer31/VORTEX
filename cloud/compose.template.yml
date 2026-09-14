@@ -1,0 +1,95 @@
+# Architecture template only. Nothing starts without reviewed image digests + private files.
+# Windows MT5 and its adapter remain native; this stack has no trading credentials.
+name: vortex-telemetry
+services:
+  db:
+    image: ${POSTGRES_IMAGE:?Set a reviewed PostgreSQL image pinned by sha256}
+    environment:
+      POSTGRES_DB: vortex
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    secrets: [db_password, rest_password]
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./local/init-roles.sql:/docker-entrypoint-initdb.d/01-roles.sql:ro
+      - ./schema.sql:/docker-entrypoint-initdb.d/02-schema.sql:ro
+    networks: [database]
+    restart: unless-stopped
+    shm_size: 128mb
+    mem_limit: 512m
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U postgres -d vortex"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    logging: { driver: json-file, options: { max-size: 5m, max-file: "2" } }
+  rest:
+    image: ${POSTGREST_IMAGE:?Set a reviewed PostgREST image pinned by sha256}
+    command: [/run/secrets/postgrest_config]
+    secrets: [postgrest_config]
+    networks: [database]
+    depends_on: { db: { condition: service_healthy } }
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 128m
+    logging: { driver: json-file, options: { max-size: 5m, max-file: "2" } }
+  telemetry:
+    build:
+      context: .
+      dockerfile: local/Dockerfile
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:?Set a reviewed Node 24 image pinned by sha256}
+    secrets:
+      - source: telemetry_config
+        target: config.mjs
+    networks: [database, monitor]
+    # Local review only. Put an approved HTTPS ingress in front before remote use.
+    ports: ["127.0.0.1:8181:8080"]
+    depends_on: [rest]
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 128m
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:8080/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 8s
+      retries: 3
+    logging: { driver: json-file, options: { max-size: 5m, max-file: "2" } }
+  watchdog:
+    build:
+      context: .
+      dockerfile: local/Dockerfile
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:?Set a reviewed Node 24 image pinned by sha256}
+    command: [node, local/watchdog.mjs]
+    secrets: [reader_token]
+    networks: [monitor]
+    depends_on: [telemetry]
+    restart: unless-stopped
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=1m"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 96m
+    healthcheck:
+      test: [CMD, node, -e, "const fs=require('node:fs');process.exit(Date.now()-Number(fs.readFileSync('/tmp/watchdog-pulse','utf8'))<90000?0:1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging: { driver: json-file, options: { max-size: 5m, max-file: "2" } }
+networks:
+  database: { internal: true }
+  monitor: { internal: true }
+volumes:
+  db_data:
+secrets:
+  db_password: { file: ./private/db_password }
+  rest_password: { file: ./private/rest_password }
+  postgrest_config: { file: ./private/postgrest.conf }
+  telemetry_config: { file: ./private/config.mjs }
+  reader_token: { file: ./private/reader_token }

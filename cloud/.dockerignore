@@ -1,0 +1,6 @@
+private
+functions/vortex-live/config.mjs
+.env*
+node_modules
+tests
+*.log

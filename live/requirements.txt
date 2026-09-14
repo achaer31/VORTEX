@@ -1,0 +1,4 @@
+# Windows x64. MetaTrader5 is only imported by the explicit Windows CLI.
+MetaTrader5==5.0.6180; sys_platform == 'win32'
+pandas==2.2.3
+numpy==2.3.5
