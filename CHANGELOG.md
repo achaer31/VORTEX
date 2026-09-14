@@ -1,5 +1,28 @@
 # Riwayat perubahan
 
+## 2026-09-14 — layanan observer dan planner risiko native
+
+- Jurnal observer yang sebelumnya belum terbaca kini diverifikasi: 175 record,
+  empat keputusan M5. Observer dipindahkan ke layanan MT5 dengan source yang
+  sama dan lock eksklusif. Cuplikan layanan berikutnya memuat 193 record dan
+  empat keputusan selama 16 menit, termasuk keputusan setelah chart lama ditutup.
+- Planner risiko murni ditambahkan: lot selalu dibulatkan turun, exit adaptif,
+  batas margin agregat, rem drawdown/streak, dan maksimal dua winner adds.
+  Review menemukan dan memperbaiki batas margin posisi lama, rentang skor dan
+  pembulatan tick sebelum hasil native diuji. Tidak ada perubahan parameter
+  agar hasil simulasi terlihat profit.
+- Compiler MT5 menghasilkan 0 error/0 warning; **155 kasus sintetis** native
+  cocok dengan oracle yang dideklarasikan. **62 tes tooling native lokal** lulus.
+  [Bukti risiko](native_mt5/validation-native-risk-2026-09-14.json) membedakan
+  kesetaraan helper beku dari aturan tambahan yang lebih ketat.
+- Probe memeriksa 357 nama simbol: DXY masih kandidat yang belum disetujui,
+  USDXOF adalah kecocokan nama keliru, dan tidak ditemukan kandidat yield.
+  Kalender mengembalikan dua record USD berdampak rendah; coverage/waktu tetap
+  belum terverifikasi. ATLAS INVALID, FROZEN/WAIT dan NO-GO tetap berlaku.
+- [Bukti layanan](native_mt5/validation-service-2026-09-14.json) tidak menyatakan
+  order, profit, restart recovery, Telegram atau AUTONOMOUS READY. Data akun dan
+  raw journal tetap privat; hasil riset $50/top-up0 tetap utuh.
+
 ## 2026-09-14 — parity enam engine native MT5
 
 - Port perhitungan indikator, enam skor, konsensus dan mode v0.2 ke kernel MQL5

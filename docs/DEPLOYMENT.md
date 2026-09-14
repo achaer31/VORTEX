@@ -131,12 +131,35 @@ Sebanyak **29 tes native lokal** lulus: 11 kontrak harness, 6 kontrak observer d
 12 tes fixture/comparator, terpisah dari bukti compile dan hasil native tersebut.
 
 Wrapper `VortexNativeObserve.mq5` dikompilasi **0 error/0 warning** dalam 2.924 ms.
-Input observasi dan identitas DEMO diisi, lalu Start dikirim melalui MT5 dengan
-Allow Algo Trading tetap tidak dicentang. Mac terkunci sebelum jurnal VPS dapat
-dibaca; pembukaan otomatis gagal. **Status proses dan jurnal observer belum
-diverifikasi; belum dapat diklaim berjalan.** [Catatan target beserta hash](../native_mt5/validation-target-2026-09-14.json)
-mencatat percobaan mulai dan hambatan pemeriksaan. Wrapper ini baca-saja;
-adapter risiko/eksekusi native belum diimplementasikan.
+[Catatan target awal](../native_mt5/validation-target-2026-09-14.json) menyimpan
+percobaan yang belum terverifikasi saat Mac terkunci. Pemeriksaan berikutnya
+[mengonfirmasi 175 record dan empat keputusan M5](../native_mt5/validation-observer-2026-09-14.json).
+Source yang sama kemudian dijalankan melalui layanan MT5, setelah script chart
+lama dihentikan. [Cuplikan layanan](../native_mt5/validation-service-2026-09-14.json)
+memuat 193 record/empat keputusan selama 969,468 detik, termasuk keputusan
+setelah chart lama ditutup. Collector terus bertambah menjadi 1.177 heartbeat,
+20 M5, tujuh M15 dan dua H1 pada cuplikan terakhir.
+
+[Layanan observer](../native_mt5/README-service.md) dikompilasi 0 error/0 warning
+dalam 2.163 ms. Ia tidak membutuhkan chart atau panggilan LLM, tetapi Windows
+auto-login, terminal/VPS restart, broker recovery dan acceptance Mac-off/Astra-off
+belum diuji. Allow Algo Trading tetap tidak dicentang; layanan ini hanya observasi.
+
+[Planner risiko native](../native_mt5/README-risk.md) dan harness dikompilasi
+0 error/0 warning dalam 2.773 ms. **155 kasus sintetis aktual MQL5** cocok dengan
+referensi: 36 sizing, 24 gate, 78 campaign, 17 stop. Pemeriksaan independen juga
+memverifikasi budget, margin agregat dan aturan winner. **62 tes native lokal**
+lulus. [Bukti dan hash](../native_mt5/validation-native-risk-2026-09-14.json)
+menjelaskan perbedaan konservatif pada pembulatan lot dan batas DD; riset beku
+tidak diedit. Planner belum dipanggil oleh observer dan belum menjadi adapter
+order, partial close, trailing, rekonsiliasi atau penyimpanan campaign.
+
+[Probe konteks aktual](../native_mt5/validation-context-probe-2026-09-14.json)
+memeriksa 357 nama simbol dan menemukan DXY serta false-positive USDXOF.
+DXY menggunakan mode kalkulasi CFD berleverage; feed ICE spot belum disetujui.
+Tidak ada kandidat label yield sepuluh tahun ditemukan oleh filter ini.
+Kalender mengembalikan dua record USD low-impact tanpa API error, tetapi itu
+tidak membuktikan coverage lengkap atau akurasi UTC. Seluruh flag approval false.
 Kalender/coverage, DXY, US10y dan session/DST runtime belum terhubung, sehingga
 ATLAS serta gate input wajib tetap menghasilkan **FROZEN/WAIT**. Tidak ada order
 atau perubahan izin Algo Trading dalam paket native ini.

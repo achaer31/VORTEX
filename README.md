@@ -21,11 +21,15 @@ belum berarti engine trading berjalan. [Status dan blocker aktual](docs/DEPLOYME
 
 [Port enam engine native MT5](native_mt5/README.md) sudah lulus perbandingan
 aktual dengan Python: **9 skenario sintetis, 8.685 baris sinyal, 22 kasus mode**.
-Harness dan wrapper observer dikompilasi tanpa error/warning; 29 tes native lokal
-lulus. Observer sudah dicoba dimulai, tetapi Mac terkunci sebelum jurnalnya bisa
-diperiksa: **belum terbukti berjalan**. [Catatan target](native_mt5/validation-target-2026-09-14.json)
-merekam batas bukti ini. Adapter risiko/eksekusi native belum tersedia dan input
-wajib ATLAS masih tidak lengkap. Hasil ini tidak mengubah **NO-GO**.
+Observer kini **terbukti berjalan sebagai layanan MT5 baca-saja**: cuplikan
+[193 record, 4 keputusan M5 selama 16 menit](native_mt5/validation-service-2026-09-14.json)
+tetap bertambah setelah chart lamanya ditutup. Lima skor parsial tersedia;
+ATLAS tetap INVALID dan keputusan FROZEN/WAIT.
+[Planner risiko native](native_mt5/README-risk.md) lulus **155 kasus sintetis
+aktual di MT5**; 62 tes tooling native lokal juga lulus. Planner belum tersambung
+ke order atau manajemen posisi. Probe broker menemukan kandidat DXY, tetapi
+belum menyediakan US10y, coverage berita atau waktu terverifikasi. Hasil ini
+tidak mengubah **NO-GO** atau membuktikan pemulihan setelah VPS restart.
 
 **[Buka dashboard VORTEX](https://vortex-xau.vercel.app)** · [catatan deployment](docs/DEPLOYMENT.md)
 
@@ -47,7 +51,7 @@ wajib ATLAS masih tidak lengkap. Hasil ini tidak mengubah **NO-GO**.
 | `reports/v0.2/` |100 skenario beku, audit, diagnosa, hash dan NO-GO |
 | `live/` | Collector, adapter dan supervisor DEMO default offline, private publisher, optional Telegram |
 | `data_collection/` | Collector native MT5, bukti akun privat, kalender dan validator input prospective |
-| `native_mt5/` | Port enam engine, parity sintetis yang telah dibandingkan, observer DEMO baca-saja |
+| `native_mt5/` | Enam engine, planner risiko, parity sintetis, probe konteks dan layanan observer DEMO baca-saja |
 | `cloud/` | Database, API privat dan template Docker; belum diprovision |
 | `deploy/` | Paket Windows dan evidence gate autonomy; belum diterapkan |
 | `dashboard/` | Tampilan web dan cuplikan historis yang disiapkan untuk publikasi |
