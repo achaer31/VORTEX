@@ -1,0 +1,18 @@
+{
+  "raw_sha256": {
+    "XAUUSD_M5.csv": "c739e3115b8d5e72c213a34fcf0b89ae7076a202fe3d2b7979e425d8fcf4cedf",
+    "XAUUSD_M15.csv": "dff80ed60ba831cf60203aadcf8f4f2b8662f49517002cf1532bdf5128f56777",
+    "XAUUSD_H1.csv": "1f36cf1067f12f0e0ff62557e2c281892c8ec26b932a492a65ca4489771b7f7e"
+  },
+  "counts": {
+    "M5": 34890,
+    "M15": 11630,
+    "H1": 2908,
+    "H4": 630
+  },
+  "timezone": "UTC",
+  "source_timezone_label": "broker_server_unknown_offset",
+  "conversion_assumption": "Exness GMT+0; current broker documentation, not a historical DST attestation",
+  "h4_origin": "derived only from four exact H1 bars aligned to UTC 00/04/08/12/16/20",
+  "genuine_unseen_data": false
+}

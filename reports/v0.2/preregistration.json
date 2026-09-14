@@ -1,0 +1,171 @@
+{
+  "experiment": "xau50-fixed-v02-001",
+  "version": "VORTEX-XAU-EXTREME-v0.2",
+  "frozen_before_evaluation_at": "2026-09-14T06:49:48.793774+00:00",
+  "source_hashes": {
+    "README.md": "ac2cfc539fbf2dd1841ddd6c1f996281d97db488213021920461fdb9c24c13b1",
+    "SPEC.md": "b92b5593bd849d923cb966d923e634f840f44390576189b32ec5ce2307b93e16",
+    "protocol.py": "e700b36d6a6b9315fdb317f18100045513da1151a8bbf1282c9392efa4f9a86a",
+    "requirements.txt": "50bd36afe0a4a4950f51db01fddfedc5d16814a1664c8a21a02e7c247b481bda",
+    "run_research.py": "5d47a49fb15477fd2e5d8d7e25034836f54f582ba441958ef44c22aa5df966ed",
+    "tests/test_backtest.py": "318d601abd0d85252a46c6d7f492f80f8048d8acb13db4f97175da27f97d538d",
+    "tests/test_data.py": "c9ba5cbcf4dc75b5fed5afbfbd87ce9e3a45b0e494b8165dc69fccb21e423e92",
+    "tests/test_engines.py": "259a5c36825d979811e7763960066ef0f3521797b4cc2e4cb444a85f201e73d1",
+    "tests/test_protocol.py": "3269b529679de49a6925d82df3582958db34c2770b745f82fe0fb712c849bbb0",
+    "tests/test_risk.py": "d74052349bc08a4119c892f0075826ed90c64c764a1fc70511a10c9635a2cc9a",
+    "tests/test_statistics.py": "eb896f5e25c363829db11a8aa7b607ce4fdb8ce1fca4172ef044e1b023df9858",
+    "vortex_v02/__init__.py": "8128c49d89c1b3b0ee89574d51a783f6c2614d0945e1b07685717f6f9aa01225",
+    "vortex_v02/backtest.py": "e3509deed69e33f3fb328b11aea87daf5d819cf784b5cc03fe9bae300fc26a26",
+    "vortex_v02/data.py": "1a01f1082d23d6ffbc9401a01edf3be9bea338a87cdc6064ff79b27d10a463bb",
+    "vortex_v02/engines.py": "e12f2da221c411391685dec9f63b93b84f290d8daaabcf35fc551618601d656d",
+    "vortex_v02/risk.py": "3dfb06cf26e4c6f2b5e6aa9f1d5212943a65b072e81104c25b5b4dddd20e7425",
+    "vortex_v02/statistics.py": "fffc5e0bdcd0539a9657040ed5a73e0a07fa174b791096a4df74f4d039086c53"
+  },
+  "risks": [
+    0.02,
+    0.035,
+    0.05,
+    0.075,
+    0.1
+  ],
+  "costs": {
+    "baseline_assumptions": {
+      "spread_multiplier": 1.0,
+      "slippage_per_ounce": 0.03,
+      "commission_per_lot_per_side": 0.0,
+      "swap_long_per_lot_per_day": -53.49,
+      "swap_short_per_lot_per_day": 0.0
+    },
+    "stress_sensitivity": {
+      "spread_multiplier": 2.0,
+      "slippage_per_ounce": 0.1,
+      "commission_per_lot_per_side": 3.5,
+      "swap_long_per_lot_per_day": -106.98,
+      "swap_short_per_lot_per_day": -5.0
+    }
+  },
+  "profiles": {
+    "mode_cap_2pct": {
+      "risk_fraction": 0.02,
+      "extreme_risk": 0.05,
+      "max_campaign_risk_fraction": 0.075
+    },
+    "mode_cap_3_5pct": {
+      "risk_fraction": 0.035,
+      "extreme_risk": 0.05,
+      "max_campaign_risk_fraction": 0.075
+    },
+    "baseline_modes_2_3_5_5pct": {
+      "risk_fraction": 0.05,
+      "extreme_risk": 0.05,
+      "max_campaign_risk_fraction": 0.075
+    },
+    "stress_extreme_7_5pct_NONDEPLOYABLE": {
+      "risk_fraction": 0.075,
+      "extreme_risk": 0.075,
+      "max_campaign_risk_fraction": 0.075
+    },
+    "stress_extreme_10pct_NONDEPLOYABLE": {
+      "risk_fraction": 0.1,
+      "extreme_risk": 0.1,
+      "max_campaign_risk_fraction": 0.1
+    }
+  },
+  "protocol_amendment": "A1_user_adaptive_exits_and_10pct_stress",
+  "windows": {
+    "full_descriptive": {
+      "start": "2026-03-18T00:00:00+00:00",
+      "end": "2026-09-15T00:00:00+00:00",
+      "role": "overlapping_descriptive"
+    },
+    "in_sample": {
+      "start": "2026-03-18T00:00:00+00:00",
+      "end": "2026-07-04T00:00:00+00:00",
+      "role": "retrospective_IS"
+    },
+    "validation": {
+      "start": "2026-07-04T00:00:00+00:00",
+      "end": "2026-08-09T00:00:00+00:00",
+      "role": "retrospective_validation"
+    },
+    "oos_previously_seen": {
+      "start": "2026-08-09T00:00:00+00:00",
+      "end": "2026-09-15T00:00:00+00:00",
+      "role": "retrospective_OOS_NOT_unseen"
+    },
+    "walk_forward_01": {
+      "start": "2026-05-17T00:00:00+00:00",
+      "end": "2026-06-06T00:00:00+00:00",
+      "role": "retrospective_walk_forward_test_NOT_unseen",
+      "train_start": "2026-03-18T00:00:00+00:00",
+      "train_end": "2026-05-17T00:00:00+00:00",
+      "fitting": "none; unchanged frozen rules; expanding warmup history"
+    },
+    "walk_forward_02": {
+      "start": "2026-06-06T00:00:00+00:00",
+      "end": "2026-06-26T00:00:00+00:00",
+      "role": "retrospective_walk_forward_test_NOT_unseen",
+      "train_start": "2026-03-18T00:00:00+00:00",
+      "train_end": "2026-06-06T00:00:00+00:00",
+      "fitting": "none; unchanged frozen rules; expanding warmup history"
+    },
+    "walk_forward_03": {
+      "start": "2026-06-26T00:00:00+00:00",
+      "end": "2026-07-16T00:00:00+00:00",
+      "role": "retrospective_walk_forward_test_NOT_unseen",
+      "train_start": "2026-03-18T00:00:00+00:00",
+      "train_end": "2026-06-26T00:00:00+00:00",
+      "fitting": "none; unchanged frozen rules; expanding warmup history"
+    },
+    "walk_forward_04": {
+      "start": "2026-07-16T00:00:00+00:00",
+      "end": "2026-08-05T00:00:00+00:00",
+      "role": "retrospective_walk_forward_test_NOT_unseen",
+      "train_start": "2026-03-18T00:00:00+00:00",
+      "train_end": "2026-07-16T00:00:00+00:00",
+      "fitting": "none; unchanged frozen rules; expanding warmup history"
+    },
+    "walk_forward_05": {
+      "start": "2026-08-05T00:00:00+00:00",
+      "end": "2026-08-25T00:00:00+00:00",
+      "role": "retrospective_walk_forward_test_NOT_unseen",
+      "train_start": "2026-03-18T00:00:00+00:00",
+      "train_end": "2026-08-05T00:00:00+00:00",
+      "fitting": "none; unchanged frozen rules; expanding warmup history"
+    },
+    "walk_forward_06": {
+      "start": "2026-08-25T00:00:00+00:00",
+      "end": "2026-09-14T00:00:00+00:00",
+      "role": "retrospective_walk_forward_test_NOT_unseen",
+      "train_start": "2026-03-18T00:00:00+00:00",
+      "train_end": "2026-08-25T00:00:00+00:00",
+      "fitting": "none; unchanged frozen rules; expanding warmup history"
+    }
+  },
+  "external_sources": {
+    "news": null,
+    "calendar_coverage": null,
+    "macro": null
+  },
+  "input_audit": {
+    "raw_sha256": {
+      "XAUUSD_M5.csv": "c739e3115b8d5e72c213a34fcf0b89ae7076a202fe3d2b7979e425d8fcf4cedf",
+      "XAUUSD_M15.csv": "dff80ed60ba831cf60203aadcf8f4f2b8662f49517002cf1532bdf5128f56777",
+      "XAUUSD_H1.csv": "1f36cf1067f12f0e0ff62557e2c281892c8ec26b932a492a65ca4489771b7f7e"
+    },
+    "counts": {
+      "M5": 34890,
+      "M15": 11630,
+      "H1": 2908,
+      "H4": 630
+    },
+    "timezone": "UTC",
+    "source_timezone_label": "broker_server_unknown_offset",
+    "conversion_assumption": "Exness GMT+0; current broker documentation, not a historical DST attestation",
+    "h4_origin": "derived only from four exact H1 bars aligned to UTC 00/04/08/12/16/20",
+    "genuine_unseen_data": false
+  },
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3"
+}

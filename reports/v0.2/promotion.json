@@ -1,0 +1,12 @@
+{
+  "status": "NOT_EVALUABLE",
+  "forward_demo_trading_enabled": false,
+  "real_trading_enabled": false,
+  "reasons": [
+    "no_genuine_unseen_evaluation",
+    "mandatory_point_in_time_news_or_macro_missing",
+    "historical_broker_cost_schedule_unverified",
+    "no_unseen_100_campaign_60_day_bootstrap_and_walkforward_evidence"
+  ],
+  "statement": "software mechanics tests are not strategy validation"
+}

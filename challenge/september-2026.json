@@ -1,0 +1,28 @@
+{
+  "name": "VORTEX XAU EXTREME — SEPTEMBER CHALLENGE",
+  "status": "NO_GO",
+  "requestedEventualEnvironment": "REAL",
+  "currentlyPermittedEnvironments": ["BACKTEST", "PAPER", "DEMO"],
+  "automaticRealActivation": false,
+  "startingCapitalUSD": 50,
+  "maximumExternalCapitalUSD": 50,
+  "additionalDepositsUSD": 0,
+  "activationAt": null,
+  "earliestRequestedActivationLocalDate": "2026-09-14",
+  "earliestRequestedActivationPeriod": "evening_after_GO_gate",
+  "measurementEndExclusive": "2026-10-01T00:00:00+07:00",
+  "timezone": "Asia/Jakarta",
+  "stretchTargetUSD": 50000,
+  "stretchTargetIsForecast": false,
+  "milestonesUSD": [100, 250, 500, 1000, 50000],
+  "martingale": false,
+  "averagingLoser": false,
+  "deadlineBasedRiskEscalation": false,
+  "mission": "maximize geometric growth while preserving the tested risk architecture",
+  "blockedBy": [
+    "point_in_time_news_and_macro_inputs_missing",
+    "historical_cost_schedule_unverified",
+    "no_genuine_unseen_statistical_validation",
+    "forward_demo_not_passed"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "bars": 34890,
+  "ready": 0,
+  "eligible_signals": 0,
+  "missing_news_bars": 34890,
+  "missing_macro_bars": 34890,
+  "mode_counts": {
+    "FROZEN": 34890
+  },
+  "engine_invalid_counts": {
+    "orion": 16444,
+    "vortex": 33,
+    "nova": 294,
+    "luna": 294,
+    "kira": 444,
+    "atlas": 34890
+  },
+  "h4_complete_bars": 630,
+  "baseline_assumptions_minimum_lot_risk": {
+    "count": 52460,
+    "min": 6.170020038066857,
+    "median": 13.32471430316375,
+    "scope": "known valid stop anchors, both directions; not eligible setups or executed trades"
+  },
+  "stress_sensitivity_minimum_lot_risk": {
+    "count": 52460,
+    "min": 6.548020038066858,
+    "median": 13.718657050240573,
+    "scope": "known valid stop anchors, both directions; not eligible setups or executed trades"
+  }
+}
