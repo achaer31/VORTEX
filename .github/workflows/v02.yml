@@ -1,9 +1,9 @@
 name: VORTEX v0.2 safety and research
 on:
   push:
-    paths: ['research_v02/**', 'live/**', 'cloud/**', 'deploy/**', 'reports/v0.2/**', 'scripts/verify_v02.py', 'dashboard/v02*', 'dashboard/assets/v02.json', 'dashboard/tools/test_v02.mjs', '.github/workflows/v02.yml']
+    paths: ['research_v02/**', 'live/**', 'data_collection/**', 'cloud/**', 'deploy/**', 'reports/v0.2/**', 'scripts/verify_v02.py', 'dashboard/v02*', 'dashboard/assets/v02.json', 'dashboard/tools/test_v02.mjs', '.github/workflows/v02.yml']
   pull_request:
-    paths: ['research_v02/**', 'live/**', 'cloud/**', 'deploy/**', 'reports/v0.2/**', 'scripts/verify_v02.py', 'dashboard/v02*', 'dashboard/assets/v02.json', 'dashboard/tools/test_v02.mjs', '.github/workflows/v02.yml']
+    paths: ['research_v02/**', 'live/**', 'data_collection/**', 'cloud/**', 'deploy/**', 'reports/v0.2/**', 'scripts/verify_v02.py', 'dashboard/v02*', 'dashboard/assets/v02.json', 'dashboard/tools/test_v02.mjs', '.github/workflows/v02.yml']
 permissions:
   contents: read
 jobs:
@@ -23,6 +23,7 @@ jobs:
       - run: python -m unittest discover -s tests -v
         working-directory: research_v02
       - run: python -m unittest discover -s live/tests -v
+      - run: python -m unittest discover -s data_collection/tests -v
       - run: python -m unittest discover -s deploy/autonomy/tests -v
       - run: python scripts/verify_v02.py
   telemetry:

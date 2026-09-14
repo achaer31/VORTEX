@@ -1,5 +1,25 @@
 # Riwayat perubahan
 
+## 2026-09-14 — collector, adapter DEMO dan persiapan migrasi
+
+- Ditambahkan mode collector DEMO eksplisit sebelum GO: candle tertutup,
+  manifest, saldo aktual dan riwayat deal privat, tanpa order atau reset modal.
+- Adapter eksekusi terpisah memakai risk gate v0.2 yang dibekukan, sizing dari
+  ekuitas berjalan, lot dibulatkan turun, SL/TP, exit adaptif, dua winner adds,
+  journal intent dan rekonsiliasi. Supervisor default offline; aktivasi tetap
+  memerlukan seluruh gate. Tidak ada order nyata atau promosi strategi.
+- Wrapper menjaga seluruh panggilan terminal pada satu thread, membuang hasil
+  terlambat, memeriksa kesehatan lebih dahulu dan tidak mengulang order ambigu.
+- Kalender satu kali dan adapter macro mempertahankan waktu penerimaan aktual;
+  input tidak lengkap tidak menghasilkan skor atau izin entry yang dibuat-buat.
+- MQL5 berhasil dikompilasi dan mengambil satu snapshot aktual, tetapi snapshot
+  tetap ditolak karena jam belum terverifikasi dan coverage belum diattestasi.
+- Paket runtime offline diverifikasi dengan hash/tanda tangan. Instalasi pada
+  VPS lama ditolak kebijakan Windows (1625); runtime belum aktif. Parser native
+  menerima empat script PowerShell tanpa kesalahan. Panduan migrasi diperbarui.
+- Pengujian baru memakai broker sintetis. Hasil riset, starting capital $50,
+  larangan top-up, NO-GO dan NOT_READY tetap utuh.
+
 ## 2026-09-14 — EXTREME v0.2 dan challenge, NO-GO
 
 - Audit v0.1 dipertahankan; model baru memakai H4, liquidity sweep, session/DST,

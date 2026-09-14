@@ -26,9 +26,10 @@ sumber terhubung. REAL tetap terkunci. Tidak ada data akun, identifier akses,
 password, reader token, atau kode eksekusi dalam unggahan hosting.
 
 **Status strategi: NO-GO / NOT_EVALUABLE. Status otonomi: NOT_TESTED / NOT_READY.**
-VPS, observer, broker execution v0.2, database jarak jauh, watchdog dan Telegram
-belum diaktifkan. Manajemen posisi v0.2 masih berupa simulator dan harus
-diintegrasikan serta diuji pada broker demo. Tugas Windows yang disiapkan
+Observer, broker execution v0.2, database jarak jauh, watchdog dan Telegram
+belum diaktifkan. Adapter DEMO dan supervisor v0.2 kini tersedia sebagai kode
+yang default-nya offline; integrasi aktual masih harus diuji pada broker demo.
+Tugas Windows yang disiapkan
 berjalan saat logon; itu belum membuktikan restart tanpa interaksi. Pengujian
 MacBook/Astra terputus, restart VPS, rekonsiliasi dan protective orders belum
 dijalankan. Lihat [kontrak runtime](ARCHITECTURE-v02.md) dan
@@ -38,6 +39,44 @@ Vercel hanya menyajikan antarmuka dan laporan. Runtime final harus tetap
 beroperasi di VPS ketika browser, dashboard, Telegram atau Astra tidak
 tersedia. Tidak ada LLM dalam jalur keputusan wajib. Git integration/auto-deploy
 belum tersambung; commit GitHub berikutnya tidak otomatis menerbitkan halaman.
+
+## Pemeriksaan VPS dan persiapan migrasi — 14 September 2026
+
+- Terminal MT5 DEMO yang sudah login dapat diakses. Balance, equity dan posisi
+  diperiksa secara privat; nilai berjalan tidak direset ke modal eksperimen.
+  Tidak ada order dikirim dan Algo Trading tetap OFF.
+- Installer Python resmi telah disalin, SHA-256 dicocokkan dan tanda tangan
+  Python Software Foundation diterima. Instalasi ditolak dengan **1625**:
+  kebijakan sistem melarang pemasangan. Python/venv/dependensi belum terpasang;
+  collector, supervisor dan scheduled task belum berjalan. Tidak ada perubahan
+  kebijakan keamanan atau percobaan menghindari pembatasan tersebut.
+- Paket offline membawa installer dan wheel Windows dengan hash serta versi
+  tetap. Empat script PowerShell diperiksa parser pada Windows PowerShell
+  **5.1.17763.9121**, menghasilkan nol kesalahan sintaks. Ini bukan bukti bahwa
+  instalasi, auto-start, atau pemulihan reboot berhasil.
+- Pembaca kalender MQL5 dikompilasi pada MetaEditor: **0 error, 0 warning**.
+  Satu query USD aktual selesai dengan dua record berdampak rendah. Jam host
+  dan kelengkapan kalender belum diattestasi; adapter secara benar **REJECTED**.
+  [Bukti terbatas beserta hash](../data_collection/calendar-validation-2026-09-14.json)
+  mempertahankan status NO-GO; log dan data mentah tetap privat.
+- [Collector](../live/README-v02-observer.md) dapat diaktifkan secara eksplisit
+  untuk membaca bukti DEMO sebelum baseline lolos. Ia tidak mengirim order.
+  [Supervisor eksekusi terpisah](../live/README-v02-execution.md) memerlukan
+  persetujuan baseline, biaya, riwayat modal dan aktivasi DEMO sebelum koneksi.
+  Tidak ada flag persetujuan yang diisi otomatis.
+- Sasaran migrasi: Windows VPS milik pengguna dengan akses Administrator untuk
+  MT5 dan Python native. Konfigurasi awal yang direkomendasikan 4 vCPU, RAM 8 GB,
+  SSD minimal 80 GB; kapasitas dan latensi tetap harus diukur saat acceptance.
+  Docker backend adalah paket Linux terpisah, bukan syarat menjalankan MT5.
+  Windows penuh tidak menjadikan image Docker Linux otomatis kompatibel.
+
+Hambatan yang tersisa: izin instalasi atau VPS pengganti; kalender yang lengkap
+dan feed DXY/US10y intraday beserta riwayat point-in-time yang sah; baseline yang
+benar-benar evaluable/lolos; konfigurasi owner untuk pengiriman privat dan
+Telegram; serta uji broker DEMO, crash/reboot, rekonsiliasi dan MacBook terputus.
+Kode dan tes lokal yang lolos tidak mengubah **NOT_READY** menjadi AUTONOMOUS READY.
+Lihat [langkah Windows](../deploy/windows/README.md). Arsitektur riset dan seluruh
+100 hasil eksperimen yang dibekukan tidak diubah.
 
 ## Deployment pertama
 
