@@ -1,0 +1,24 @@
+# Credentials and local connection state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.rdp
+.vercel/
+credentials*
+secrets*
+# Private raw exports and generated experiments
+data/*
+!data/README.md
+local-results/
+*.zip
+# Runtime and build files
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+dist/
+.DS_Store
+work/

@@ -1,0 +1,3 @@
+# Exact scientific-library versions used in experiment v0.1 (Python 3.12.14).
+pandas==2.2.3
+numpy==2.3.5
