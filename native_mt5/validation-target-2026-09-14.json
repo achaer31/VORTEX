@@ -1,0 +1,57 @@
+{
+  "schema": "vortex.native.target-validation.v1",
+  "date": "2026-09-14",
+  "environment": "Exness Windows VPS / installed MetaEditor and MT5",
+  "scope": "Synthetic native signal parity and read-only observer compile/start attempt",
+  "source_sha256": {
+    "VortexSignalCore.mqh": "0dfe474a3205931264bf170fdc93d0e2c14b8ba6218699e957a7f0585d59e547",
+    "VortexParityCheck.mq5": "8f829eb6e74195bffbc26153d72f73670ed0e343084a1321c2cd91bd578e979c",
+    "VortexNativeObserve.mq5": "a49ce45ad266dc58af1834d7dfd7d5cea753ff2c933191b9d977a7662aab6de8"
+  },
+  "transfer": {
+    "fixture_and_core_harness_bundle_sha256": "f5372630271b5a78293b0a89273541d6fa6a3af3d65f30b89119a3a7f0780e4a",
+    "bundle_sha256_checked_on_target": true,
+    "observer_final_source_sha256_checked_on_target": true,
+    "expected_python_outputs_excluded_from_input_bundle": true
+  },
+  "compilation": {
+    "VortexParityCheck": {
+      "errors": 0,
+      "warnings": 0,
+      "elapsed_ms": 3791,
+      "private_log_sha256": "6357f97f3896617a14b131466a30d9e65d506c602c499995d312a1265b47b003"
+    },
+    "VortexNativeObserve": {
+      "errors": 0,
+      "warnings": 0,
+      "elapsed_ms": 2924,
+      "private_log_sha256": "eb88930d04d49222bcb3ac5556c2d8adbc9afcdbad56e57da6cf7fe327fc4764"
+    }
+  },
+  "synthetic_native_run": {
+    "observed_target_manifest_status": "COMPUTED_FOR_COMPARISON",
+    "cases": 9,
+    "signal_rows": 8685,
+    "mode_rows": 22,
+    "comparison_report": "validation-native-parity-2026-09-14.json"
+  },
+  "observer": {
+    "demo_identity_input_configured": true,
+    "enable_observation_input": true,
+    "start_submitted_in_mt5": true,
+    "process_journal_verified": false,
+    "verification_blocker": "Local Mac locked before remote journal could be read; observed terminal start action alone does not verify continued operation.",
+    "execution_adapter_present": false,
+    "algo_trading_permission_changed": false
+  },
+  "local_native_tests": 29,
+  "autonomous_ready": false,
+  "strategy_go": false,
+  "orders_sent": false,
+  "limitations": [
+    "This metadata records observed tool actions and private log hashes, not a cryptographic attestation of the running binary.",
+    "Observer runtime and restart/disconnection acceptance remain unverified.",
+    "Calendar/macro/session runtime adapter and native risk/execution manager are absent.",
+    "No profitability test or real-money operation is represented here."
+  ]
+}

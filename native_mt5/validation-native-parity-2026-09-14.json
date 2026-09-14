@@ -1,0 +1,704 @@
+{
+  "schema": "vortex.native.parity-validation.v1",
+  "validation_date": "2026-09-14",
+  "status": "PARITY_PASS",
+  "scope": "Numerical comparison of copied actual MT5 native harness output against deterministic synthetic frozen-Python fixtures.",
+  "synthetic_only": true,
+  "strategy_approval": false,
+  "execution_enabled_by_validation": false,
+  "scenario_count": 9,
+  "signal_rows_compared": 8685,
+  "signal_columns_compared": 32,
+  "mode_rows_compared": 22,
+  "mismatch_count": 0,
+  "tolerance": {
+    "absolute": 1e-07,
+    "relative": 1e-10,
+    "rule": "float math.isclose; all missing values, flags, modes, directions, timestamps and reasons require exact equivalence"
+  },
+  "numeric_error_summary": {
+    "finite_float_pairs": 75074,
+    "max_absolute_error": 6.165770116695057e-10,
+    "fields": {
+      "orion": {
+        "finite_pairs": 7614,
+        "maximum_absolute_error": 5.771383371211414e-11,
+        "maximum_relative_error": 1.1517389308778546e-11,
+        "pairs_with_nonzero_difference": 6903
+      },
+      "vortex": {
+        "finite_pairs": 7461,
+        "maximum_absolute_error": 6.165770116695057e-10,
+        "maximum_relative_error": 5.014655934404876e-10,
+        "pairs_with_nonzero_difference": 6366
+      },
+      "nova": {
+        "finite_pairs": 5559,
+        "maximum_absolute_error": 0.0,
+        "maximum_relative_error": 0.0,
+        "pairs_with_nonzero_difference": 0
+      },
+      "luna": {
+        "finite_pairs": 7534,
+        "maximum_absolute_error": 0.0,
+        "maximum_relative_error": 0.0,
+        "pairs_with_nonzero_difference": 0
+      },
+      "kira": {
+        "finite_pairs": 7674,
+        "maximum_absolute_error": 0.0,
+        "maximum_relative_error": 0.0,
+        "pairs_with_nonzero_difference": 0
+      },
+      "atlas": {
+        "finite_pairs": 6609,
+        "maximum_absolute_error": 0.0,
+        "maximum_relative_error": 0.0,
+        "pairs_with_nonzero_difference": 0
+      },
+      "consensus": {
+        "finite_pairs": 4473,
+        "maximum_absolute_error": 3.878142251778627e-11,
+        "maximum_relative_error": 1.1543188845383387e-11,
+        "pairs_with_nonzero_difference": 4320
+      },
+      "atr": {
+        "finite_pairs": 8637,
+        "maximum_absolute_error": 2.842170943040401e-14,
+        "maximum_relative_error": 9.118288587507564e-16,
+        "pairs_with_nonzero_difference": 5457
+      },
+      "stop_long": {
+        "finite_pairs": 3405,
+        "maximum_absolute_error": 0.0,
+        "maximum_relative_error": 0.0,
+        "pairs_with_nonzero_difference": 0
+      },
+      "stop_short": {
+        "finite_pairs": 4098,
+        "maximum_absolute_error": 0.0,
+        "maximum_relative_error": 0.0,
+        "pairs_with_nonzero_difference": 0
+      },
+      "swing_low": {
+        "finite_pairs": 6276,
+        "maximum_absolute_error": 0.0,
+        "maximum_relative_error": 0.0,
+        "pairs_with_nonzero_difference": 0
+      },
+      "swing_high": {
+        "finite_pairs": 5734,
+        "maximum_absolute_error": 0.0,
+        "maximum_relative_error": 0.0,
+        "pairs_with_nonzero_difference": 0
+      }
+    }
+  },
+  "scenario_results": {
+    "trend_up": {
+      "pass": true,
+      "expected_rows": 960,
+      "actual_rows": 960,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    },
+    "trend_down": {
+      "pass": true,
+      "expected_rows": 960,
+      "actual_rows": 960,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    },
+    "quiet": {
+      "pass": true,
+      "expected_rows": 960,
+      "actual_rows": 960,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    },
+    "volatility": {
+      "pass": true,
+      "expected_rows": 960,
+      "actual_rows": 960,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    },
+    "zero_atr": {
+      "pass": true,
+      "expected_rows": 960,
+      "actual_rows": 960,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    },
+    "gaps": {
+      "pass": true,
+      "expected_rows": 957,
+      "actual_rows": 957,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    },
+    "absent_context": {
+      "pass": true,
+      "expected_rows": 1008,
+      "actual_rows": 1008,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    },
+    "external_edges": {
+      "pass": true,
+      "expected_rows": 960,
+      "actual_rows": 960,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    },
+    "missing_external": {
+      "pass": true,
+      "expected_rows": 960,
+      "actual_rows": 960,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    },
+    "pure_modes": {
+      "pass": true,
+      "expected_rows": 22,
+      "actual_rows": 22,
+      "mismatch_count": 0,
+      "first_mismatches": []
+    }
+  },
+  "fixture_coverage": {
+    "trend_up": {
+      "counts": {
+        "M5": 960,
+        "M15": 640,
+        "H1": 960,
+        "H4": 240
+      },
+      "modes": {
+        "FROZEN": 956,
+        "EXTREME": 3,
+        "AGGRESSIVE": 1
+      },
+      "directions": {
+        "0": 956,
+        "1": 4
+      },
+      "ready_rows": 921,
+      "kira_values": [
+        75.0
+      ],
+      "reasons": {
+        "orion_reason": [
+          "weighted_ema_stack_and_slope"
+        ],
+        "vortex_reason": [
+          "momentum_warmup",
+          "rsi_macd_roc3"
+        ],
+        "nova_reason": [
+          "aligned_break",
+          "aligned_retest",
+          "break_without_aligned_structure",
+          "ordered_structure",
+          "structure_warmup",
+          "unresolved_structure"
+        ],
+        "luna_reason": [
+          "confirmed_sweep",
+          "conflicting_sweeps",
+          "decaying_sweep",
+          "no_sweep",
+          "sweep_warmup"
+        ],
+        "kira_reason": [
+          "volatility_quality"
+        ],
+        "atlas_reason": [
+          "macro_context_valid"
+        ]
+      },
+      "stale_context_rows": {
+        "m15": 0,
+        "h1": 0,
+        "h4": 0
+      }
+    },
+    "trend_down": {
+      "counts": {
+        "M5": 960,
+        "M15": 640,
+        "H1": 960,
+        "H4": 240
+      },
+      "modes": {
+        "FROZEN": 956,
+        "EXTREME": 3,
+        "AGGRESSIVE": 1
+      },
+      "directions": {
+        "0": 956,
+        "-1": 4
+      },
+      "ready_rows": 921,
+      "kira_values": [
+        75.0
+      ],
+      "reasons": {
+        "orion_reason": [
+          "weighted_ema_stack_and_slope"
+        ],
+        "vortex_reason": [
+          "momentum_warmup",
+          "rsi_macd_roc3"
+        ],
+        "nova_reason": [
+          "aligned_break",
+          "aligned_retest",
+          "break_without_aligned_structure",
+          "ordered_structure",
+          "structure_warmup",
+          "unresolved_structure"
+        ],
+        "luna_reason": [
+          "confirmed_sweep",
+          "conflicting_sweeps",
+          "decaying_sweep",
+          "no_sweep",
+          "sweep_warmup"
+        ],
+        "kira_reason": [
+          "volatility_quality"
+        ],
+        "atlas_reason": [
+          "macro_context_valid"
+        ]
+      },
+      "stale_context_rows": {
+        "m15": 0,
+        "h1": 0,
+        "h4": 0
+      }
+    },
+    "quiet": {
+      "counts": {
+        "M5": 960,
+        "M15": 640,
+        "H1": 960,
+        "H4": 240
+      },
+      "modes": {
+        "FROZEN": 960
+      },
+      "directions": {
+        "0": 960
+      },
+      "ready_rows": 0,
+      "kira_values": [
+        20.0
+      ],
+      "reasons": {
+        "orion_reason": [
+          "weighted_ema_stack_and_slope"
+        ],
+        "vortex_reason": [
+          "momentum_warmup",
+          "rsi_macd_roc3"
+        ],
+        "nova_reason": [
+          "structure_warmup"
+        ],
+        "luna_reason": [
+          "no_sweep",
+          "sweep_warmup"
+        ],
+        "kira_reason": [
+          "too_quiet"
+        ],
+        "atlas_reason": [
+          "macro_context_valid"
+        ]
+      },
+      "stale_context_rows": {
+        "m15": 0,
+        "h1": 0,
+        "h4": 0
+      }
+    },
+    "volatility": {
+      "counts": {
+        "M5": 960,
+        "M15": 640,
+        "H1": 960,
+        "H4": 240
+      },
+      "modes": {
+        "FROZEN": 960
+      },
+      "directions": {
+        "0": 960
+      },
+      "ready_rows": 0,
+      "kira_values": [
+        20.0,
+        50.0,
+        75.0,
+        90.0
+      ],
+      "reasons": {
+        "orion_reason": [
+          "weighted_ema_stack_and_slope"
+        ],
+        "vortex_reason": [
+          "momentum_warmup",
+          "rsi_macd_roc3"
+        ],
+        "nova_reason": [
+          "structure_warmup"
+        ],
+        "luna_reason": [
+          "confirmed_sweep",
+          "conflicting_sweeps",
+          "decaying_sweep",
+          "no_sweep",
+          "sweep_warmup"
+        ],
+        "kira_reason": [
+          "too_quiet",
+          "too_wild",
+          "volatility_quality"
+        ],
+        "atlas_reason": [
+          "macro_context_valid"
+        ]
+      },
+      "stale_context_rows": {
+        "m15": 0,
+        "h1": 0,
+        "h4": 0
+      }
+    },
+    "zero_atr": {
+      "counts": {
+        "M5": 960,
+        "M15": 640,
+        "H1": 960,
+        "H4": 240
+      },
+      "modes": {
+        "FROZEN": 960
+      },
+      "directions": {
+        "0": 960
+      },
+      "ready_rows": 0,
+      "kira_values": [],
+      "reasons": {
+        "orion_reason": [
+          "trend_warmup"
+        ],
+        "vortex_reason": [
+          "momentum_warmup"
+        ],
+        "nova_reason": [
+          "structure_warmup"
+        ],
+        "luna_reason": [
+          "sweep_warmup"
+        ],
+        "kira_reason": [
+          "volatility_baseline_invalid"
+        ],
+        "atlas_reason": [
+          "execution_input_invalid"
+        ]
+      },
+      "stale_context_rows": {
+        "m15": 0,
+        "h1": 0,
+        "h4": 0
+      }
+    },
+    "gaps": {
+      "counts": {
+        "M5": 957,
+        "M15": 639,
+        "H1": 959,
+        "H4": 239
+      },
+      "modes": {
+        "FROZEN": 953,
+        "EXTREME": 3,
+        "AGGRESSIVE": 1
+      },
+      "directions": {
+        "0": 953,
+        "1": 4
+      },
+      "ready_rows": 855,
+      "kira_values": [
+        75.0
+      ],
+      "reasons": {
+        "orion_reason": [
+          "trend_warmup",
+          "weighted_ema_stack_and_slope"
+        ],
+        "vortex_reason": [
+          "momentum_warmup",
+          "rsi_macd_roc3"
+        ],
+        "nova_reason": [
+          "aligned_break",
+          "aligned_retest",
+          "break_without_aligned_structure",
+          "m15_context_stale",
+          "ordered_structure",
+          "structure_warmup",
+          "unresolved_structure"
+        ],
+        "luna_reason": [
+          "confirmed_sweep",
+          "conflicting_sweeps",
+          "decaying_sweep",
+          "m15_context_stale",
+          "no_sweep",
+          "sweep_warmup"
+        ],
+        "kira_reason": [
+          "volatility_baseline_invalid",
+          "volatility_quality"
+        ],
+        "atlas_reason": [
+          "execution_input_invalid",
+          "macro_context_valid"
+        ]
+      },
+      "stale_context_rows": {
+        "m15": 3,
+        "h1": 12,
+        "h4": 48
+      }
+    },
+    "absent_context": {
+      "counts": {
+        "M5": 1008,
+        "M15": 640,
+        "H1": 960,
+        "H4": 240
+      },
+      "modes": {
+        "FROZEN": 1004,
+        "EXTREME": 3,
+        "AGGRESSIVE": 1
+      },
+      "directions": {
+        "0": 1004,
+        "1": 4
+      },
+      "ready_rows": 960,
+      "kira_values": [
+        75.0
+      ],
+      "reasons": {
+        "orion_reason": [
+          "trend_warmup",
+          "weighted_ema_stack_and_slope"
+        ],
+        "vortex_reason": [
+          "momentum_warmup",
+          "rsi_macd_roc3"
+        ],
+        "nova_reason": [
+          "aligned_break",
+          "aligned_retest",
+          "break_without_aligned_structure",
+          "m15_context_stale",
+          "ordered_structure",
+          "unresolved_structure"
+        ],
+        "luna_reason": [
+          "confirmed_sweep",
+          "conflicting_sweeps",
+          "decaying_sweep",
+          "m15_context_stale",
+          "no_sweep"
+        ],
+        "kira_reason": [
+          "volatility_baseline_invalid",
+          "volatility_quality"
+        ],
+        "atlas_reason": [
+          "execution_input_invalid",
+          "macro_context_valid"
+        ]
+      },
+      "stale_context_rows": {
+        "m15": 48,
+        "h1": 48,
+        "h4": 48
+      }
+    },
+    "external_edges": {
+      "counts": {
+        "M5": 960,
+        "M15": 640,
+        "H1": 960,
+        "H4": 240
+      },
+      "modes": {
+        "FROZEN": 959,
+        "EXTREME": 1
+      },
+      "directions": {
+        "0": 959,
+        "1": 1
+      },
+      "ready_rows": 776,
+      "kira_values": [
+        75.0
+      ],
+      "reasons": {
+        "orion_reason": [
+          "weighted_ema_stack_and_slope"
+        ],
+        "vortex_reason": [
+          "momentum_warmup",
+          "rsi_macd_roc3"
+        ],
+        "nova_reason": [
+          "aligned_break",
+          "aligned_retest",
+          "break_without_aligned_structure",
+          "ordered_structure",
+          "structure_warmup",
+          "unresolved_structure"
+        ],
+        "luna_reason": [
+          "confirmed_sweep",
+          "conflicting_sweeps",
+          "decaying_sweep",
+          "no_sweep",
+          "sweep_warmup"
+        ],
+        "kira_reason": [
+          "volatility_quality"
+        ],
+        "atlas_reason": [
+          "calendar_invalid",
+          "execution_input_invalid",
+          "macro_context_valid",
+          "macro_invalid",
+          "news_blocked",
+          "session_invalid",
+          "spread_blocked"
+        ]
+      },
+      "stale_context_rows": {
+        "m15": 0,
+        "h1": 0,
+        "h4": 0
+      }
+    },
+    "missing_external": {
+      "counts": {
+        "M5": 960,
+        "M15": 640,
+        "H1": 960,
+        "H4": 240
+      },
+      "modes": {
+        "FROZEN": 960
+      },
+      "directions": {
+        "0": 960
+      },
+      "ready_rows": 0,
+      "kira_values": [
+        75.0
+      ],
+      "reasons": {
+        "orion_reason": [
+          "weighted_ema_stack_and_slope"
+        ],
+        "vortex_reason": [
+          "momentum_warmup",
+          "rsi_macd_roc3"
+        ],
+        "nova_reason": [
+          "aligned_break",
+          "aligned_retest",
+          "break_without_aligned_structure",
+          "ordered_structure",
+          "structure_warmup",
+          "unresolved_structure"
+        ],
+        "luna_reason": [
+          "confirmed_sweep",
+          "conflicting_sweeps",
+          "decaying_sweep",
+          "no_sweep",
+          "sweep_warmup"
+        ],
+        "kira_reason": [
+          "volatility_quality"
+        ],
+        "atlas_reason": [
+          "calendar_invalid"
+        ]
+      },
+      "stale_context_rows": {
+        "m15": 0,
+        "h1": 0,
+        "h4": 0
+      }
+    }
+  },
+  "native_manifest": {
+    "schema": "vortex.native.parity-result.v1",
+    "fixture_kind": "SYNTHETIC_OFFLINE_PARITY_V1",
+    "harness_version": "VORTEX-NATIVE-PARITY-0.1",
+    "core_version": "v0.2-parity-1",
+    "status": "COMPUTED_FOR_COMPARISON",
+    "cases_requested": "9",
+    "cases_completed": "9",
+    "signal_rows": "8685",
+    "mode_cases": "22",
+    "mode_results": "22",
+    "error": "",
+    "parity_evaluated": "false",
+    "strategy_approval": "false"
+  },
+  "frozen_reference_sha256": {
+    "research_v02/vortex_v02/engines.py": "e12f2da221c411391685dec9f63b93b84f290d8daaabcf35fc551618601d656d",
+    "research_v02/vortex_v02/data.py": "1a01f1082d23d6ffbc9401a01edf3be9bea338a87cdc6064ff79b27d10a463bb",
+    "research_v02/vortex_v02/__init__.py": "8128c49d89c1b3b0ee89574d51a783f6c2614d0945e1b07685717f6f9aa01225",
+    "research_v02/SPEC.md": "b92b5593bd849d923cb966d923e634f840f44390576189b32ec5ce2307b93e16"
+  },
+  "source_sha256_at_validation": {
+    "native_mt5/VortexSignalCore.mqh": "0dfe474a3205931264bf170fdc93d0e2c14b8ba6218699e957a7f0585d59e547",
+    "native_mt5/VortexParityCheck.mq5": "8f829eb6e74195bffbc26153d72f73670ed0e343084a1321c2cd91bd578e979c",
+    "native_mt5/tests/parity_fixtures.py": "fc85327c3d56b94be5baed24536c6f82205e12c55e9886e5fcd65b5915c86f8a",
+    "native_mt5/tests/compare_parity.py": "1c971a22f3840d413fbb05e131f63545741cb22bb64217d3e54d0cabd37e856a"
+  },
+  "fixture_manifest_sha256": "ffce6a16062e52ed1ff7d54295e68f2d65c6f7e1d45fe808fe503c101f97d5cc",
+  "copied_native_csv_sha256": {
+    "absent_context_signals.csv": "39b856476552c8172da2eb7b4caca0f6840f8a69d219c68d770dbd237adba22c",
+    "external_edges_signals.csv": "e1725c98e6775cfe45c382ff0f43be9a37394ee37e7229cbbc605fe8e7fa8dd1",
+    "gaps_signals.csv": "e91e2e49c81873fa714d596661051e995fe0ccfe677559368c220120fbda541f",
+    "manifest.csv": "bd6e24d8ea031d3bde932807fddc732315c35c2015923735d389bb9976d9a15a",
+    "missing_external_signals.csv": "fb54048b01cfbbff0c98cba9cdc4346d54b9f17b6a5530e39b34a0786cdc93c0",
+    "mode_results.csv": "25eb81db3b70c704383384e5912a1afe72d931e832103dd02a19b7c4cb999c54",
+    "quiet_signals.csv": "0cd5b8809c147540dcd1f768bb7381b4cf617baa5180eb2274fb2947e28e6b4d",
+    "trend_down_signals.csv": "792ad67d8ca802a5cbe6f497589485ee0290ab22a9280d2f881b08844ba6be2d",
+    "trend_up_signals.csv": "10c2183b79922d8d62c4e6a4e1092111dde7c90d2c4bfd1d7bc858ffd6249981",
+    "volatility_signals.csv": "9cc071be3383cf2b8f17e63a0ed0b740c10dedb4e931e16e760223f1e3a1c05f",
+    "zero_atr_signals.csv": "cef01cf7511edeb2ed10e660ec6343bfd8c0ae61adaf47f11ce7bca4c1be6ac4"
+  },
+  "limitations": [
+    "Synthetic signal parity does not establish profitability, predictive edge, real calendar/macro availability, verified costs, or baseline GO.",
+    "No real-account access, order submission, fill, P/L, execution risk sizing or autonomous recovery is exercised by this parity harness.",
+    "Source hashes are the checkout observed at validation; the CSV manifest is a declaration, not signed proof of the source binary or compilation.",
+    "This report validates supplied copied CSV contents. Actual compiler logs, source transfer and observed terminal run provenance are separate evidence.",
+    "No user or account identifiers, balances, broker prices, credentials, machine paths or private output locations are included."
+  ]
+}
